@@ -1,0 +1,44 @@
+# Gym and exercise guide
+
+Checked 9 October 2026. The supplied Google listing resolves to Dynamic Gym Upgraded, Ghatikia / Kalinganagar, Bhubaneswar: https://share.google/V9EaVnQTEKHRnEJdw
+
+The user confirmed the gym has all standard gym equipment. Programming now assumes machines, cables, dumbbells, benches and cardio stations are available. Exact machine model and setup still vary. Alternatives are for occupied stations or suitable movement preferences rather than presumed missing equipment.
+
+## Five activity days
+
+| Day | Movements | Equipment / alternatives |
+|---|---|---|
+| Monday | Chest press, supported row, pulldown, lateral raise | Press machine; supported row / confirmed low cable row; pulldown / assisted pull-up; light dumbbells |
+| Tuesday | Leg press, leg curl, bridge, calf raise, dead bug | Leg press / squat to stable bench; seated or prone curl; mat for bridge and core |
+| Wednesday | Easy walking or cycling, technique practice | Treadmill, cycle or safe walking route; conversational pace |
+| Thursday | Seated cable row, chest press, pulldown, lateral raise | Same equipment and movement alternatives as Monday |
+| Friday | Squat to bench, leg curl, bridge, calf raise, dead bug | Stable bench / leg press; curl machine; floor and balance support; mat |
+
+Foundation: two working sets per strength movement, generally 8–12 repetitions (raise/curl/bridge 10–15, calf 12–15, dead bug 6–10 each side), 2–3 clean reps in reserve. Rest around 90–120 seconds, longer when needed. Warm up and learn exact safety stops and machine settings with staff. Do not infer comparable weights across different machines or movements.
+
+The app provides equipment status, setup, cues, common mistakes, schematic illustrations, and named demonstration resources. Alternative buttons open a separate logger; they do not rewrite the calendar or add an automatic substitute. Use a substitute instead of that slot, not extra volume. Equipment preferences stay locally on this device.
+
+If no leg-curl station exists, ask staff for a coached knee-flexion replacement; a glute bridge is not an equivalent substitute. If dumbbells and a lateral-raise machine are unavailable, omit that accessory pending review. Push-ups require a stable incline when needed and must not provoke wrist pain. Recurring arm tingling warrants assessment rather than a equipment swap through symptoms.
+
+## References
+
+- PureGym equipment video collection (assisted pull-up, seated row, cardio): https://www.puregym.com/lets-get-started/workout-builder/equipment-how-tos/
+- PureGym chest press video: https://www.youtube.com/watch?v=CIykDiF4sfg — generic seated machine, not the exact photographed incline press.
+- NASM pulldown technique: https://www.nasm.org/resource-center/blog/training/the-biomechanics-of-the-lat-pulldown-muscles-grip-and-form
+- NASM leg press: https://www.youtube.com/watch?v=cDGOn-yfKJA
+- NASM seated leg curl: https://www.youtube.com/watch?v=_2Kd0d-JEUM
+- NASM push-up: https://www.youtube.com/watch?v=WDIpL0pjun0
+- Chest-supported row demonstration from project reference: https://www.youtube.com/watch?v=FU6YQawma2Q
+- ScottHermanFitness lateral raise: https://www.youtube.com/watch?v=3VcKaXpzqRo
+- Mayo Clinic squat video: https://www.mayoclinic.org/healthy-lifestyle/fitness/multimedia/squat/vid-20084663 — standing variant; app describes bench regression.
+- PureGym bridge video guide: https://www.puregym.com/exercises/glutes/glute-bridge/
+- PureGym calf guide: https://www.puregym.com/exercises/legs/calf-exercises/calf-raises/ — weighted demonstration; start bodyweight.
+- UCLA core exercise resource: https://www.uclahealth.org/programs/sports-performance/resources/stay-home-resources/movement-series/core-and-abs-exercise-technique — links EXOS dead bug: https://www.youtube.com/watch?v=c_rVXFHT4MU
+
+Guides and diagrams are simplified learning aids. Videos require internet and use the source site's playback controls. Offline logging and text/schematics remain available.
+
+## Training priorities
+
+Use four manageable strength sessions and one easy cardio day. Begin with two working sets, controlled repetitions and 2–3 reps in reserve. Increase the smallest load increment only after all prescribed sets reach the upper repetition target with stable form and no symptoms. Keep equipment settings consistent. Machines are an effective starting point; learn free-weight squats and hinges with coaching before using them as progressions. Stages are readiness-based, not a deadline to become expert. Optional extra movements are not required to make the programme work.
+
+Reference: ACSM 2026 guidance emphasises consistency, engaging major muscle groups at least twice weekly, and individualisation: https://acsm.org/resistance-training-guidelines-update-2026/
