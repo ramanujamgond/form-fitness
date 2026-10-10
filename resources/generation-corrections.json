@@ -1,0 +1,179 @@
+[
+  {
+    "exercise": "press",
+    "mode": "edit",
+    "return_full_image": false,
+    "model_tier": "nb2",
+    "model_name": "Gemini 3.1 Flash Image",
+    "model_id": "gemini-3.1-flash-image-preview",
+    "requested_tier": "nb2",
+    "auto_selected": false,
+    "thinking_level": null,
+    "resolution": "1k",
+    "grounding_enabled": true,
+    "requested": 1,
+    "returned": 1,
+    "negative_prompt_applied": false,
+    "used_input_images": true,
+    "input_image_paths": [
+      "/Users/string1301/code_den/gym/web/img/generated/press.webp"
+    ],
+    "input_image_count": 1,
+    "aspect_ratio": "4:3",
+    "output_path": "/Users/string1301/code_den/gym/web/img/generated/press-v2.png",
+    "source_file_id": null,
+    "edit_instruction": "Correct this educational two-panel chest press illustration. Use a strict SIDE VIEW of the seated person and machine. LEFT panel: BOTH elbows bent about 90 degrees, BOTH handles close to mid-chest. RIGHT panel: BOTH arms extended forward at chest height with softly bent elbows. Machine arms pivot consistently from the same joints. Back fully on backrest, feet flat, neutral wrist grip. Full-color realistic 3D render, purple shirt, plain neutral background. NO text, NO arrows. Keep setup and finish clearly different.",
+    "generation_prompt": null,
+    "output_method": "file_system_with_files_api",
+    "workflow": "workflows.md_edit_sequence",
+    "images": [
+      {
+        "model": "gemini-3.1-flash-image-preview",
+        "model_tier": "nb2",
+        "instruction": "Correct this educational two-panel chest press illustration. Use a strict SIDE VIEW of the seated person and machine. LEFT panel: BOTH elbows bent about 90 degrees, BOTH handles close to mid-chest. RIGHT panel: BOTH arms extended forward at chest height with softly bent elbows. Machine arms pivot consistently from the same joints. Back fully on backrest, feet flat, neutral wrist grip. Full-color realistic 3D render, purple shirt, plain neutral background. NO text, NO arrows. Keep setup and finish clearly different.",
+        "thinking_level": "high",
+        "media_resolution": "high",
+        "source_mime_type": "image/webp",
+        "result_mime_type": "image/png",
+        "synthid_watermark": true,
+        "edit_index": 1,
+        "full_path": "/Users/string1301/code_den/gym/web/img/generated/press-v2.png",
+        "thumb_path": "/Users/string1301/code_den/gym/web/img/generated/press-v2_thumb.jpeg",
+        "size_bytes": 473280,
+        "width": 1200,
+        "height": 896,
+        "is_stored": true,
+        "output_path_used": true,
+        "source_path": "/Users/string1301/code_den/gym/web/img/generated/press.webp"
+      }
+    ],
+    "file_paths": [
+      "/Users/string1301/code_den/gym/web/img/generated/press-v2.png"
+    ],
+    "files_api_ids": [],
+    "parent_relationships": [
+      [
+        null,
+        null
+      ]
+    ],
+    "total_size_mb": 0.45
+  },
+  {
+    "exercise": "deadbug",
+    "mode": "edit",
+    "return_full_image": false,
+    "model_tier": "nb2",
+    "model_name": "Gemini 3.1 Flash Image",
+    "model_id": "gemini-3.1-flash-image-preview",
+    "requested_tier": "nb2",
+    "auto_selected": false,
+    "thinking_level": null,
+    "resolution": "1k",
+    "grounding_enabled": true,
+    "requested": 1,
+    "returned": 1,
+    "negative_prompt_applied": false,
+    "used_input_images": true,
+    "input_image_paths": [
+      "/Users/string1301/code_den/gym/web/img/generated/deadbug.webp"
+    ],
+    "input_image_count": 1,
+    "aspect_ratio": "4:3",
+    "output_path": "/Users/string1301/code_den/gym/web/img/generated/deadbug-v2.png",
+    "source_file_id": null,
+    "edit_instruction": "Correct this two-panel DEAD BUG instructional illustration. LEFT: person lies flat on back, BOTH thighs vertical hips at 90 degrees and BOTH knees bent at 90 degrees shins horizontal, BOTH arms vertical palms facing inward. RIGHT: person remains on back, LEFT arm extended overhead close to floor and RIGHT leg extends straight low without back arching; RIGHT arm remains vertical and LEFT hip and knee remain bent at 90 degrees. Head rests on mat, shoulders not lifted. Full-color realistic 3D render, purple shirt, neutral background. No text. Entire body visible side view, no ambiguous anatomy.",
+    "generation_prompt": null,
+    "output_method": "file_system_with_files_api",
+    "workflow": "workflows.md_edit_sequence",
+    "images": [
+      {
+        "model": "gemini-3.1-flash-image-preview",
+        "model_tier": "nb2",
+        "instruction": "Correct this two-panel DEAD BUG instructional illustration. LEFT: person lies flat on back, BOTH thighs vertical hips at 90 degrees and BOTH knees bent at 90 degrees shins horizontal, BOTH arms vertical palms facing inward. RIGHT: person remains on back, LEFT arm extended overhead close to floor and RIGHT leg extends straight low without back arching; RIGHT arm remains vertical and LEFT hip and knee remain bent at 90 degrees. Head rests on mat, shoulders not lifted. Full-color realistic 3D render, purple shirt, neutral background. No text. Entire body visible side view, no ambiguous anatomy.",
+        "thinking_level": "high",
+        "media_resolution": "high",
+        "source_mime_type": "image/webp",
+        "result_mime_type": "image/png",
+        "synthid_watermark": true,
+        "edit_index": 1,
+        "full_path": "/Users/string1301/code_den/gym/web/img/generated/deadbug-v2.png",
+        "thumb_path": "/Users/string1301/code_den/gym/web/img/generated/deadbug-v2_thumb.jpeg",
+        "size_bytes": 311288,
+        "width": 1200,
+        "height": 896,
+        "is_stored": true,
+        "output_path_used": true,
+        "source_path": "/Users/string1301/code_den/gym/web/img/generated/deadbug.webp"
+      }
+    ],
+    "file_paths": [
+      "/Users/string1301/code_den/gym/web/img/generated/deadbug-v2.png"
+    ],
+    "files_api_ids": [],
+    "parent_relationships": [
+      [
+        null,
+        null
+      ]
+    ],
+    "total_size_mb": 0.3
+  },
+  {
+    "exercise": "press",
+    "mode": "generate",
+    "return_full_image": false,
+    "model_tier": "nb2",
+    "model_name": "Gemini 3.1 Flash Image",
+    "model_id": "gemini-3.1-flash-image-preview",
+    "requested_tier": "nb2",
+    "auto_selected": false,
+    "thinking_level": null,
+    "resolution": "1k",
+    "grounding_enabled": true,
+    "requested": 1,
+    "returned": 1,
+    "negative_prompt_applied": true,
+    "used_input_images": false,
+    "input_image_paths": [],
+    "input_image_count": 0,
+    "aspect_ratio": "4:3",
+    "output_path": "/Users/string1301/code_den/gym/web/img/generated/press-v3.png",
+    "source_file_id": null,
+    "edit_instruction": null,
+    "generation_prompt": "A single educational realistic full-color 3D exercise illustration of SEATED MACHINE CHEST PRESS at the START position. Camera exact left side profile, subject faces right. Person in purple shirt and black shorts seated with back on vertical backrest, feet flat on floor. BOTH elbows bent approximately 90 degrees. Upper arms point downward beside ribs, forearms horizontal. Hands hold machine handles AT MID CHEST, only 15 centimeters in front of chest. Machine arms extend from front frame to hands, clearly a pressing machine. Handles must be close to chest, not at arms length. Correct seated chest press anatomy. Whole body and machine visible. Plain light neutral background. One person only, one frame only. No labels, text, arrows or line art.",
+    "output_method": "file_system_with_files_api",
+    "workflow": "workflows.md_generate_sequence",
+    "images": [
+      {
+        "model": "gemini-3.1-flash-image-preview",
+        "model_tier": "nb2",
+        "response_index": 1,
+        "image_index": 1,
+        "resolution": "1k",
+        "aspect_ratio": "4:3",
+        "thinking_level": "high",
+        "media_resolution": "high",
+        "grounding_enabled": true,
+        "mime_type": "image/png",
+        "synthid_watermark": true,
+        "prompt": "A single educational realistic full-color 3D exercise illustration of SEATED MACHINE CHEST PRESS at the START position. Camera exact left side profile, subject faces right. Person in purple shirt and black shorts seated with back on vertical backrest, feet flat on floor. BOTH elbows bent approximately 90 degrees. Upper arms point downward beside ribs, forearms horizontal. Hands hold machine handles AT MID CHEST, only 15 centimeters in front of chest. Machine arms extend from front frame to hands, clearly a pressing machine. Handles must be close to chest, not at arms length. Correct seated chest press anatomy. Whole body and machine visible. Plain light neutral background. One person only, one frame only. No labels, text, arrows or line art.",
+        "enhanced_prompt": "A single educational realistic full-color 3D exercise illustration of SEATED MACHINE CHEST PRESS at the START position. Camera exact left side profile, subject faces right. Person in purple shirt and black shorts seated with back on vertical backrest, feet flat on floor. BOTH elbows bent approximately 90 degrees. Upper arms point downward beside ribs, forearms horizontal. Hands hold machine handles AT MID CHEST, only 15 centimeters in front of chest. Machine arms extend from front frame to hands, clearly a pressing machine. Handles must be close to chest, not at arms length. Correct seated chest press anatomy. Whole body and machine visible. Plain light neutral background. One person only, one frame only. No labels, text, arrows or line art.\n\nAvoid: arms fully extended, arms pointing sideways, two panels, front view, fly machine",
+        "negative_prompt": "arms fully extended, arms pointing sideways, two panels, front view, fly machine",
+        "full_path": "/Users/string1301/code_den/gym/web/img/generated/press-v3.png",
+        "thumb_path": "/Users/string1301/code_den/gym/web/img/generated/press-v3_thumb.jpeg",
+        "size_bytes": 463360,
+        "width": 1200,
+        "height": 896,
+        "is_stored": true,
+        "output_path_used": true
+      }
+    ],
+    "file_paths": [
+      "/Users/string1301/code_den/gym/web/img/generated/press-v3.png"
+    ],
+    "files_api_ids": [],
+    "parent_relationships": [],
+    "total_size_mb": 0.44
+  }
+]

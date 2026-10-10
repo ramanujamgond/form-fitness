@@ -1,0 +1,100 @@
+[
+  {
+    "exercise": "assisted",
+    "file": "web/img/generated/assisted.webp",
+    "bytes": 30460,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "press",
+    "file": "web/img/generated/press.webp",
+    "bytes": 18506,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "row",
+    "file": "web/img/generated/row.webp",
+    "bytes": 22924,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "pulldown",
+    "file": "web/img/generated/pulldown.webp",
+    "bytes": 31218,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "raise",
+    "file": "web/img/generated/raise.webp",
+    "bytes": 20216,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "pushup",
+    "file": "web/img/generated/pushup.webp",
+    "bytes": 14976,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "legpress",
+    "file": "web/img/generated/legpress.webp",
+    "bytes": 39388,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "squat",
+    "file": "web/img/generated/squat.webp",
+    "bytes": 16400,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "curl",
+    "file": "web/img/generated/curl.webp",
+    "bytes": 25896,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "bridge",
+    "file": "web/img/generated/bridge.webp",
+    "bytes": 9310,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "calf",
+    "file": "web/img/generated/calf.webp",
+    "bytes": 14902,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "deadbug",
+    "file": "web/img/generated/deadbug.webp",
+    "bytes": 12278,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "walk",
+    "file": "web/img/generated/walk.webp",
+    "bytes": 29016,
+    "width": 800,
+    "height": 597
+  },
+  {
+    "exercise": "cablerow",
+    "file": "web/img/generated/cablerow.webp",
+    "bytes": 27922,
+    "width": 800,
+    "height": 597
+  }
+]

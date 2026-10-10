@@ -1,0 +1,142 @@
+{
+  "checked": "2026-10-10",
+  "exercises": [
+    {
+      "exercise": "assisted",
+      "video": "https://www.youtube.com/watch?v=6i7adZVlwIk",
+      "title": "How to Properly Use The Assisted Pull-up Machine In The Gym With Good Form (Exercise Demonstration)",
+      "channel": "Gerardi Performance",
+      "thumbnail": "https://i.ytimg.com/vi/6i7adZVlwIk/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg"
+    },
+    {
+      "exercise": "press",
+      "video": "https://www.youtube.com/watch?v=CIykDiF4sfg",
+      "title": "How To Do A Seated Chest Press",
+      "channel": "PureGym",
+      "thumbnail": "https://i.ytimg.com/vi/CIykDiF4sfg/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "row",
+      "video": "https://www.youtube.com/watch?v=FU6YQawma2Q",
+      "title": "How to Properly Use Chest Supported Row Machine (QUICK FIXES)",
+      "channel": "Colossus Fitness",
+      "thumbnail": "https://i.ytimg.com/vi/FU6YQawma2Q/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "pulldown",
+      "video": "https://www.youtube.com/watch?v=AOpi-p0cJkc",
+      "title": "Beginner's Guide: Lat Pulldown",
+      "channel": "SilverSneakers",
+      "thumbnail": "https://i.ytimg.com/vi/AOpi-p0cJkc/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "raise",
+      "video": "https://www.youtube.com/watch?v=3VcKaXpzqRo",
+      "title": "How To: Dumbbell Side Lateral Raise",
+      "channel": "ScottHermanFitness",
+      "thumbnail": "https://i.ytimg.com/vi/3VcKaXpzqRo/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "pushup",
+      "video": "https://www.youtube.com/watch?v=WDIpL0pjun0",
+      "title": "How to do a Push-Up | Proper Form & Technique | NASM",
+      "channel": "National Academy of Sports Medicine (NASM)",
+      "thumbnail": "https://i.ytimg.com/vi/WDIpL0pjun0/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "legpress",
+      "video": "https://www.youtube.com/watch?v=cDGOn-yfKJA",
+      "title": "How to do a Leg Press  | Proper Form & Technique | NASM",
+      "channel": "National Academy of Sports Medicine (NASM)",
+      "thumbnail": "https://i.ytimg.com/vi/cDGOn-yfKJA/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "squat",
+      "video": "https://www.youtube.com/watch?v=-GaRp6_b2vk",
+      "title": "How to do a Box Squat",
+      "channel": "National Academy of Sports Medicine (NASM)",
+      "thumbnail": "https://i.ytimg.com/vi/-GaRp6_b2vk/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg"
+    },
+    {
+      "exercise": "curl",
+      "video": "https://www.youtube.com/watch?v=_2Kd0d-JEUM",
+      "title": "How to do a Seated Leg Curl  | Proper Form & Technique | NASM",
+      "channel": "National Academy of Sports Medicine (NASM)",
+      "thumbnail": "https://i.ytimg.com/vi/_2Kd0d-JEUM/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "bridge",
+      "video": "https://www.youtube.com/watch?v=SKOMwg1JLrU",
+      "title": "How to do a Glute bridge",
+      "channel": "National Academy of Sports Medicine (NASM)",
+      "thumbnail": "https://i.ytimg.com/vi/SKOMwg1JLrU/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "calf",
+      "video": "https://www.youtube.com/watch?v=eMTy3qylqnE",
+      "title": "Calf Raise Exercise Demo",
+      "channel": "Redefined Health",
+      "thumbnail": "https://i.ytimg.com/vi/eMTy3qylqnE/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "deadbug",
+      "video": "https://www.youtube.com/watch?v=bxn9FBrt4-A",
+      "title": "How to do a Dead Bug | Proper Form & Technique | NASM",
+      "channel": "National Academy of Sports Medicine (NASM)",
+      "thumbnail": "https://i.ytimg.com/vi/bxn9FBrt4-A/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg"
+    },
+    {
+      "exercise": "walk",
+      "video": "https://www.youtube.com/watch?v=kr9fHMbztn0",
+      "title": "Treadmill Basics for Beginners | How to Use a Treadmill Safely \ud83c\udfc3\u200d\u2640\ufe0f #treadmill #planetfitness",
+      "channel": "Emily Elle",
+      "thumbnail": "https://i.ytimg.com/vi/kr9fHMbztn0/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "exercise": "cablerow",
+      "video": "https://www.youtube.com/watch?v=DHA7QGDa2qg",
+      "title": "How to do a seated row",
+      "channel": "Nuffield Health",
+      "thumbnail": "https://i.ytimg.com/vi/DHA7QGDa2qg/hqdefault.jpg",
+      "available": true,
+      "thumbnail_type": "image/jpeg",
+      "photo_error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

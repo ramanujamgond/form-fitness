@@ -16,7 +16,7 @@ The user confirmed the gym has all standard gym equipment. Programming now assum
 
 Foundation: two working sets per strength movement, generally 8–12 repetitions (raise/curl/bridge 10–15, calf 12–15, dead bug 6–10 each side), 2–3 clean reps in reserve. Rest around 90–120 seconds, longer when needed. Warm up and learn exact safety stops and machine settings with staff. Do not infer comparable weights across different machines or movements.
 
-The app provides equipment status, setup, cues, common mistakes, schematic illustrations, and named demonstration resources. Alternative buttons open a separate logger; they do not rewrite the calendar or add an automatic substitute. Use a substitute instead of that slot, not extra volume. Equipment preferences stay locally on this device.
+The app provides equipment status, setup, cues, common mistakes, generated full-color illustrations, original demonstration previews, and named demonstration resources. Alternative buttons open a separate logger; they do not rewrite the calendar or add an automatic substitute. Use a substitute instead of that slot, not extra volume. Equipment preferences stay locally on this device.
 
 If no leg-curl station exists, ask staff for a coached knee-flexion replacement; a glute bridge is not an equivalent substitute. If dumbbells and a lateral-raise machine are unavailable, omit that accessory pending review. Push-ups require a stable incline when needed and must not provoke wrist pain. Recurring arm tingling warrants assessment rather than a equipment swap through symptoms.
 
@@ -35,10 +35,18 @@ If no leg-curl station exists, ask staff for a coached knee-flexion replacement;
 - PureGym calf guide: https://www.puregym.com/exercises/legs/calf-exercises/calf-raises/ — weighted demonstration; start bodyweight.
 - UCLA core exercise resource: https://www.uclahealth.org/programs/sports-performance/resources/stay-home-resources/movement-series/core-and-abs-exercise-technique — links EXOS dead bug: https://www.youtube.com/watch?v=c_rVXFHT4MU
 
-Guides and diagrams are simplified learning aids. Videos require internet and use the source site's playback controls. Offline logging and text/schematics remain available.
+Generated illustrations are supplemental learning aids. Videos require internet and use the source site's playback controls. Offline logging and text/illustrations remain available.
 
 ## Training priorities
 
 Use four manageable strength sessions and one easy cardio day. Begin with two working sets, controlled repetitions and 2–3 reps in reserve. Increase the smallest load increment only after all prescribed sets reach the upper repetition target with stable form and no symptoms. Keep equipment settings consistent. Machines are an effective starting point; learn free-weight squats and hinges with coaching before using them as progressions. Stages are readiness-based, not a deadline to become expert. Optional extra movements are not required to make the programme work.
 
 Reference: ACSM 2026 guidance emphasises consistency, engaging major muscle groups at least twice weekly, and individualisation: https://acsm.org/resistance-training-guidelines-update-2026/
+
+## Gradual core progression
+
+The default Tuesday and Friday lower-body sessions include two sets of dead bugs at 6–10 repetitions per side, with 60–90 seconds rest or longer if needed. Begin with a short bent-knee reach or heel slide. Build clean repetitions first; once both sets stay steady and symptom-free across sessions, lengthen the reach or add the opposite arm. Keep breathing and stop before control is lost. Core volume does not automatically increase when the general training stage changes. Visible abdominal definition also depends on overall body composition, nutrition and consistency; the app does not promise a timeline or spot reduction.
+
+Source: [NASM core programming guidance](https://www.nasm.org/resource-center/blog/training/core-training-programming).
+
+All 14 demonstrations have checked metadata and image previews. See `resources/media-audit.json` for titles, channels, links and availability on 10 October 2026. Small publisher JPEG previews serve as the original references; generated illustrations are clearly labelled separately. There are no autoplay videos or large GIF downloads.

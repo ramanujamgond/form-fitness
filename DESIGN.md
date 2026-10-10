@@ -8,7 +8,7 @@ Reference direction: `designImg/image copy 2.png`, `image copy 3.png`, and `imag
 - Reserve purple for primary actions, selected dates, progress and active navigation. Use pale purple for secondary emphasis.
 - Keep the daily workout and its next action visible quickly on a phone. Use small section labels, short headings and restrained card spacing.
 - Show actual data and clear empty states. Never use sample results to decorate analytics.
-- Keep detailed instructions in disclosures, while names, targets and logging controls stay visible.
+- Exercise guide disclosures start open during workouts; session and previous/next controls connect the cards.
 
 ## Tokens
 
@@ -37,7 +37,7 @@ Spacing follows a 4 px base with practical 14 px card gaps. Mobile page padding 
 - Workout logging: compact forms and divided result rows; preserve effort, technique and symptom details.
 - Calendar: neutral date cells, solid-purple selection, pale-purple logged dates with a border. Labels explain state without relying on color alone.
 - Navigation: consistent outline SVG icons, always accompanied by text. Active tab uses pale purple and purple ink.
-- Illustrations: simple labelled diagrams using purple to indicate motion and neutral gray for setup.
+- Illustrations: compressed full-color Nano Banana assets, clearly labelled as generated. Show credited original demonstration previews separately; remove stick-figure exercise art.
 - Charts: purple data series, quiet axes, clear units and missing-data descriptions.
 
 ## Responsive and accessible behavior

@@ -41,8 +41,8 @@ Cloud sync is not a historical recovery backup. Free Supabase projects may pause
 - Calendar with selectable past dates and next-week ICS export
 - Workout sets, effort/form/symptom notes, cardio and optional exercises
 - Rest timer with best-effort active-screen vibration/sound
-- Lightweight muscle-location schematics and exercise instructions
-- Selected external technique video links
+- 14 compressed Nano Banana exercise illustrations, credited original demonstration previews and exercise instructions
+- Verified demonstration video links for every exercise; embeds load after a tap
 - Meal estimates, custom meals, protein totals
 - Measurement charts, exercise history, conservative progression guidance
 - Optional pelvic-floor education/logging toggle
@@ -51,7 +51,7 @@ Cloud sync is not a historical recovery backup. Free Supabase projects may pause
 
 ## Deliberate limitations
 
-Scheduled push reminders require an additional server scheduler and are not implemented. Use calendar reminders or phone Clock alarms. No automatic camera counts, wearable import, meal recognition, detailed posture animation, progress photos or statistical recovery model. Simplified start/movement schematics are provided for selected exercises. Meal estimates are illustrative; oil, recipes and portions vary. Raw weight/waist points are shown rather than smoothed trends. Equipment must be confirmed; generic machine cards do not imply it exists in your gym. The default routine is conservative foundation programming. A manual stage setting changes working sets from two to three; it does not assess readiness or generate advanced periodization. Calendar day overrides let you move sessions around travel.
+Scheduled push reminders require an additional server scheduler and are not implemented. Use calendar reminders or phone Clock alarms. No automatic camera counts, wearable import, meal recognition, offline videos, progress photos or statistical recovery model. Generated illustrations supplement the real demonstrations; machine models and settings vary. Meal estimates are illustrative; oil, recipes and portions vary. Raw weight/waist points are shown rather than smoothed trends. Equipment must be confirmed; generic machine cards do not imply it exists in your gym. The default routine is conservative foundation programming. A manual stage setting changes working sets from two to three; it does not assess readiness or generate advanced periodization. Calendar day overrides let you move sessions around travel.
 
 Recurring elbow/wrist tingling needs assessment. Do not progress through symptoms. Pelvic-floor training is optional and suitability should be checked with a health professional. Source links are in app Settings.
 
@@ -72,3 +72,13 @@ Before real use, verify on the S24: installation, offline reload/logging, reconn
 - `tests/`: storage and backup checks.
 
 Original reference guides can contain earlier recommendations; the current app and exercise guide describe the active plan. The source docs include personal fitness information; repository visibility controls who can read them.
+
+## Exercise media and navigation · 10 October 2026
+
+Every exercise has a local WebP illustration (800 px maximum width), an original JPEG preview from its demonstration publisher, a video link and technique steps. All 14 illustrations total approximately 306 KiB; the deployable `web/` folder is approximately 1.2 MiB. Original generation files and prompts are archived under `resources/`, outside the deployed folder. Video previews remain credited to their publishers and are embedded remotely, not relicensed. Wikimedia photo endpoints returned 403 during the new audit, so matching video previews are used for exercise references instead.
+
+Workout guides open by default. Session buttons and previous/next exercise controls jump to the appropriate card. Back, Today and Calendar controls complement the main navigation. URL routes retain the selected day and Learn section across reloads; browser back restores prior routes. Two dead-bug sets remain on both lower-body days, with progression through controlled reps, reach length and opposite-arm movement rather than a calendar deadline.
+
+Generated illustrations and text work offline after installation. Original previews cache only after viewing, with at most 32 cached images. Videos require internet; provider embedding or regional restrictions may require opening YouTube directly. Metadata and JPEG endpoint availability were verified, but endpoint checks do not guarantee video playback on every device.
+
+Verification: `node --test tests/store.test.mjs`, JavaScript syntax checks, and `node tests/workout-browser.cjs` (requires Playwright and installed Chrome). Browser checks cover day plans, visible guides, exercise jumps, set persistence, browser back, reload, mobile width and offline illustrations. `resources/media-audit.json` records the reference audit; `resources/generation-provenance.json` and `generation-corrections.json` retain prompts and models.
