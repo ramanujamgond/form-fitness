@@ -1,3 +1,4 @@
+import {validBreak} from './scheduling.js';
 let db;
 function connect(name){return new Promise((resolve,reject)=>{const r=indexedDB.open(name,1);r.onupgradeneeded=()=>r.result.createObjectStore('records',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
 export async function openDB(scope='guest'){const next=await connect(scope==='legacy'?'form-journal':`form-journal-${scope}`);db?.close();db=next;}
@@ -6,4 +7,4 @@ export function allRecords(){return new Promise((resolve,reject)=>{const r=db.tr
 export function putMany(rows){return new Promise((resolve,reject)=>{const tx=db.transaction('records','readwrite');for(const row of rows)tx.objectStore('records').put(row);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error);});}
 export function makeRecord(type,date,data){return {id:crypto.randomUUID(),type,date,data,updatedAt:new Date().toISOString(),deleted:false,dirty:true};}
 export function mergeRecords(local,remote){const map=new Map(local.map(r=>[r.id,r]));for(const r of remote){const old=map.get(r.id);if(!old||r.updatedAt>old.updatedAt)map.set(r.id,{...r,dirty:false});}return [...map.values()];}
-export function validateRecords(rows){return Array.isArray(rows)&&rows.length<=50000&&rows.every(r=>r&&typeof r.id==='string'&&['set','food','measurement','checkin','pelvic','session','schedule','preferences'].includes(r.type)&&/^\d{4}-\d{2}-\d{2}$/.test(r.date)&&r.data&&typeof r.data==='object'&&!Array.isArray(r.data)&&!Number.isNaN(Date.parse(r.updatedAt))&&typeof r.deleted==='boolean');}
+export function validateRecords(rows){return Array.isArray(rows)&&rows.length<=50000&&rows.every(r=>r&&typeof r.id==='string'&&['set','food','measurement','checkin','pelvic','session','schedule','preferences','break'].includes(r.type)&&/^\d{4}-\d{2}-\d{2}$/.test(r.date)&&r.data&&typeof r.data==='object'&&!Array.isArray(r.data)&&!Number.isNaN(Date.parse(r.updatedAt))&&typeof r.deleted==='boolean'&&(r.type!=='break'||(validBreak(r.date,r.data.endDate)&&typeof r.data.reason==='string'&&r.data.reason.length<=160))); }

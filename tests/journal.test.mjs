@@ -62,3 +62,9 @@ test('a stale account tab cannot upload through another account session',async()
  const s=setup();assert.equal((await s.request('POST',[row()],{origin,'x-form-account':'sister'})).statusCode,409);
  assert.equal(s.calls.length,0);
 });
+
+test('planned breaks sync within the verified account and reject invalid ranges',async()=>{
+ const s=setup();const pause=row(undefined,{id:'break-1',type:'break',date:'2026-10-12',data:{endDate:'2026-10-16',reason:'Travel'}});
+ assert.equal((await s.request('POST',[pause])).statusCode,200);const result=await s.request('GET');assert.equal(result.body.records[0].data.endDate,'2026-10-16');
+ assert.equal((await s.request('POST',[{...pause,data:{endDate:'2026-10-11',reason:'Travel'}}])).statusCode,400);
+});

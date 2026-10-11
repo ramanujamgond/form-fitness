@@ -1,6 +1,6 @@
 # FORM — personal training journal
 
-A mobile-first PWA with a dependency-free browser app. Five activity days: four foundation strength sessions, one light cardio day, two recovery days. Local IndexedDB saves workouts, food, measurements and optional pelvic-floor practice. No personal source documents are deployed.
+A mobile-first PWA with a dependency-free browser app. Choose 1–7 weekly activity days. The default is four foundation strength sessions, one light cardio day and two recovery days. Six- and seven-day choices add easy activity, with active recovery on the seventh day. Local IndexedDB saves workouts, food, measurements and optional pelvic-floor practice. No personal source documents are deployed.
 
 ## Run locally and deploy
 
@@ -45,7 +45,7 @@ On Android Chrome, open the HTTPS Vercel URL, let resources load, then choose me
 
 ## Deliberate limitations
 
-Scheduled push reminders require an additional server scheduler and are not implemented. Use calendar reminders or phone Clock alarms. No automatic camera counts, wearable import, meal recognition, offline videos, progress photos or statistical recovery model. Generated illustrations supplement the real demonstrations; machine models and settings vary. Meal estimates are illustrative; oil, recipes and portions vary. Raw weight/waist points are shown rather than smoothed trends. Equipment must be confirmed; generic machine cards do not imply it exists in your gym. The default routine is conservative foundation programming. A manual stage setting changes working sets from two to three; it does not assess readiness or generate advanced periodization. Calendar day overrides let you move sessions around travel.
+Scheduled push reminders require an additional server scheduler and are not implemented. Use calendar reminders or phone Clock alarms. No automatic camera counts, wearable import, meal recognition, offline videos, progress photos or statistical recovery model. Generated illustrations supplement the real demonstrations; machine models and settings vary. Meal estimates are illustrative; oil, recipes and portions vary. Raw weight/waist points are shown rather than smoothed trends. Equipment must be confirmed; generic machine cards do not imply it exists in your gym. The default routine is conservative foundation programming. A manual stage setting changes working sets from two to three; it does not assess readiness or generate advanced periodization. Choose weekly activity frequency in onboarding or Settings. Frequency changes apply from today and preserve earlier plans. Calendar supports single skipped days and date-range breaks for travel, work or rest, with cancellation. Completed workouts remain saved. The normal weekly schedule resumes after a break; missed sessions are not queued. Calendar previews, reports and exports use the selected schedule. Day-plan overrides remain available for individual adjustments.
 
 Recurring elbow/wrist tingling needs assessment. Do not progress through symptoms. Pelvic-floor training is optional and suitability should be checked with a health professional. Source links are in app Settings.
 
@@ -76,3 +76,13 @@ Workout guides open by default. Session buttons and previous/next exercise contr
 Generated illustrations and text work offline after installation. Original previews cache only after viewing, with at most 32 cached images. Videos require internet; provider embedding or regional restrictions may require opening YouTube directly. Metadata and JPEG endpoint availability were verified, but endpoint checks do not guarantee video playback on every device.
 
 Verification: `node --test tests/store.test.mjs`, JavaScript syntax checks, and `node tests/workout-browser.cjs` (requires Playwright and installed Chrome). Browser checks cover day plans, visible guides, exercise jumps, set persistence, browser back, reload, mobile width and offline illustrations. `resources/media-audit.json` records the reference audit; `resources/generation-provenance.json` and `generation-corrections.json` retain prompts and models.
+
+## Flexible weekly schedule
+
+In onboarding or Settings, choose **Activity days per week** (1–7). One to three days use full-body sessions; four uses upper/lower strength sessions; five adds easy cardio; six adds a second easy day; seven adds active recovery. For the seventh day, relaxed walking/mobility is optional and full rest is always available. Lower-body and full-body sessions retain core work. These are conservative templates, not an automatic readiness assessment.
+
+Use **Skip this day** from Today, Train or Calendar for a single missed session. In Calendar, **Plan time off** accepts an inclusive date range (up to one year) and a reason. Cancel a range or undo a single skip to restore the plan. Overlapping breaks continue to apply until removed, and already completed workouts remain completed. After a break, the normal weekly schedule resumes without moving missed sessions into a backlog.
+
+Frequency history, skipped sessions and planned breaks are saved locally, included in backups and synced within the user's account. Changes in weekly frequency apply from today; prior dates keep their earlier frequency. New break ranges start today or later; Calendar's single-day skip can record a past missed session. Calendar export reflects day overrides and planned breaks. Re-export calendar events after schedule changes; existing imported phone-calendar events do not update automatically.
+
+Verification: `npm test`, `npm run build`, and `node tests/schedule-browser.cjs` using Playwright/Chrome and the local dev server. Schedule browser checks use a separate browser profile and create no real accounts or emails.
