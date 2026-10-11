@@ -1,4 +1,4 @@
-import {validBreak} from './scheduling.js';
+import {validBreak} from './dates.js';
 let db;
 function connect(name){return new Promise((resolve,reject)=>{const r=indexedDB.open(name,1);r.onupgradeneeded=()=>r.result.createObjectStore('records',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
 export async function openDB(scope='guest'){const next=await connect(scope==='legacy'?'form-journal':`form-journal-${scope}`);db?.close();db=next;}

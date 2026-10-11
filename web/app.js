@@ -1,9 +1,9 @@
-import {dayPlan,weeklyPlan,frequencyOn,setFrequency,planSummary,frequencyField,validBreak} from './scheduling.js?v=19';
-import {basicsVisual} from './diagrams.js?v=19';
-import {exercises,week,meals,sources,gym,tools,basics} from './content.js?v=19';
-import {lineChart,barChart,stackedBars,hbars,ring,heatmap} from './charts.js?v=19';
+import {dayPlan,weeklyPlan,frequencyOn,setFrequency,planSummary,frequencyField,validBreak} from './scheduling.js?v=20';
+import {basicsVisual} from './diagrams.js?v=20';
+import {exercises,week,meals,sources,gym,tools,basics} from './content.js?v=20';
+import {lineChart,barChart,stackedBars,hbars,ring,heatmap} from './charts.js?v=20';
 import {openDB,allRecords,putMany,makeRecord,mergeRecords,validateRecords,legacyRecords} from './store.js';
-import {defaultProfile,preferencesFrom,accountPanel,onboarding,goals,experiences} from './accounts.js?v=19';
+import {defaultProfile,preferencesFrom,accountPanel,onboarding,goals,experiences} from './accounts.js?v=20';
 const $=s=>document.querySelector(s);
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const dateKey=(d=new Date())=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
