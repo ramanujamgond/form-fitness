@@ -1,0 +1,40 @@
+const {chromium}=require('/Users/string1301/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const assert=require('node:assert/strict');
+(async()=>{
+ const browser=await chromium.launch({headless:true,channel:'chrome'});
+ try{
+  const context=await browser.newContext({serviceWorkers:'block'});
+  const page=await context.newPage();
+  let session=null,failAccount=false;
+  let releaseSession;
+  const sessionCheck=new Promise(resolve=>releaseSession=resolve);
+  await page.route('**/api/config',r=>r.fulfill({json:{configured:true,emailReady:true}}));
+  await page.route('**/api/account',async r=>{await sessionCheck;await r.fulfill(failAccount?{status:503,json:{error:'Unavailable'}}:{json:session});});
+  await page.route('**/api/journal',r=>r.fulfill({json:{records:[]}}));
+  await page.goto((process.env.FORM_TEST_URL||'http://localhost:3000')+'/#calendar');
+  await page.waitForSelector('[role="status"]');
+  assert.equal(await page.locator('nav').count(),0,'Journal must not flash while checking the session');
+  releaseSession();
+  await page.waitForSelector('[data-form="account"]');
+  assert.equal(await page.locator('[data-form="account"]').count(),1,'Anonymous users must see login on startup');
+  assert.equal(await page.locator('nav[aria-label="Main navigation"]').count(),0,'Journal navigation must stay hidden before login');
+  await page.locator('[data-action="authmode:signup"]').click();
+  assert.equal(await page.locator('[data-form="account"][data-mode="signup"]').count(),1);
+  await page.locator('[data-action="authmode:forgot"]').click();
+  assert.equal(await page.locator('[data-form="forgotpin"]').count(),1);
+  session={user:{id:'startup-test-user',name:'Test user',email:'test@example.com'},canClaimLegacy:false};
+  await page.reload();
+  await page.waitForSelector('nav[aria-label="Main navigation"]');
+  assert.equal(await page.locator('[data-form="account"]').count(),0,'Saved sessions should open the journal');
+  failAccount=true;
+  await page.reload();
+  await page.waitForSelector('[data-action="checkcloud"]');
+  assert.equal(await page.locator('nav').count(),0,'Account outages must not fall back to guest access');
+  const offline=await browser.newContext({serviceWorkers:'block'});
+  const local=await offline.newPage();
+  await local.route('**/api/config',r=>r.fulfill({json:{configured:false,emailReady:false}}));
+  await local.goto((process.env.FORM_TEST_URL||'http://localhost:3000')+'/');
+  await local.waitForSelector('nav[aria-label="Main navigation"]');
+  console.log('PASS: anonymous startup, signup, PIN recovery, and restored-session access');
+ }finally{await browser.close();}
+})().catch(e=>{console.error(e);process.exitCode=1;});
