@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
  const context=await browser.newContext({viewport:{width:412,height:915}});
  const page=await context.newPage();
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('http://localhost:8080/#train?date=2026-10-06&section=basics');
+ await page.goto((process.env.FORM_TEST_URL||'http://localhost:8080')+'/#train?date=2026-10-06&section=basics');
  await page.waitForSelector('#exercise-train-deadbug');
  assert.equal(await page.locator('.exercise').count(),5);
  assert.equal(await page.locator('.exercise details[open]').count(),5);
@@ -28,11 +28,11 @@ const assert=require('node:assert/strict');
  await page.waitForSelector('#exercise-train-deadbug');
  assert.match(await page.locator('#exercise-train-deadbug').innerText(),/1 of 2/);
  for(const [date,count] of [['2026-10-05',4],['2026-10-07',1],['2026-10-08',4],['2026-10-09',5],['2026-10-10',0]]){
-  await page.goto(`http://localhost:8080/#train?date=${date}&section=basics`);
+  await page.goto(`${process.env.FORM_TEST_URL||'http://localhost:8080'}/#train?date=${date}&section=basics`);
   await page.waitForSelector('.session-links',{state:'attached'});
   assert.equal(await page.locator('.exercise').count(),count);
  }
- await page.goto('http://localhost:8080/#train?date=2026-10-06&section=basics');
+ await page.goto((process.env.FORM_TEST_URL||'http://localhost:8080')+'/#train?date=2026-10-06&section=basics');
  await page.waitForSelector('#exercise-train-deadbug');
  await page.evaluate(()=>navigator.serviceWorker.ready);
  await page.reload();

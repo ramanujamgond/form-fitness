@@ -1,39 +1,33 @@
 # FORM — personal training journal
 
-A dependency-free, mobile-first PWA. Five activity days: four foundation strength sessions, one light cardio day, two recovery days. Local IndexedDB saves workouts, food, measurements and optional pelvic-floor practice. No personal source documents are deployed.
+A mobile-first PWA with a dependency-free browser app. Five activity days: four foundation strength sessions, one light cardio day, two recovery days. Local IndexedDB saves workouts, food, measurements and optional pelvic-floor practice. No personal source documents are deployed.
 
-## Run locally
+## Run locally and deploy
 
-From this folder:
+Use Node.js 22. The browser app remains dependency-free; PostgreSQL and authentication dependencies run only on the server.
 
 ```sh
-python3 -m http.server 8080 --directory web
+npm ci
+npm run dev
 ```
 
-Open http://localhost:8080. Offline service workers need HTTPS or localhost. A plain HTTP LAN address on your phone will not enable offline installation; use the HTTPS deployed site for S24 testing.
+Open http://localhost:3000. Offline logging works without database credentials. For cloud sync, follow [DEPLOYMENT.md](DEPLOYMENT.md): official Neon PostgreSQL, Vercel Functions, cookie-based Better Auth sign-in, and Vercel GitHub deployment. The ignored `.env` holds local server credentials; `.env.example` lists the required values. No secret is sent to the browser or included in GitHub build artifacts.
 
-## GitHub Pages
+```sh
+npm test
+npm run build
+npm run db:migrate # only after DATABASE_URL points at your intended database
+```
 
-Create a public repository containing `web/`, `.github/`, this README and the SQL setup. Do **not** upload `docs/`: it contains personal training notes and photographs. No repository has been created or uploaded by this implementation.
+Create the owner account locally before public deployment. Public signup is disabled in production. Only the email in `AUTH_ALLOWED_EMAIL` can register locally or access the journal API. Authentication uses an HttpOnly session cookie and database-backed rate limiting. The server derives record ownership from the session; clients cannot supply another account's owner ID.
 
-Use `main` as the branch. In GitHub Settings → Pages, select **GitHub Actions** as the source. The supplied workflow deploys **only `web/`**, works at a repository subpath, and needs no npm build. This app uses browser-native JavaScript modules; GitHub assembles/publishes the already deployable files.
+Records sync on sign-in, online saves, reconnect, resume, and every three minutes while the visible app has queued changes. App-closed timing is not guaranteed. Existing local records, including previously synced Supabase records, are queued on first Neon sign-in. Records that exist only in the old cloud must be exported from the old app first. Profile preferences and equipment selections remain local. Export a backup before changing app URLs: browser storage belongs to the URL and does not automatically move from localhost or GitHub Pages to Vercel.
 
-On S24 Chrome, open the HTTPS site, let the initial resources load, then choose menu → Add to home screen / Install. Test airplane mode only after that initial load. 192/512 PNG manifest icons are included.
+Deletions are tombstones. Conflicts use the latest record timestamp, rather than field-level merging; accurate device clocks matter. The API refuses stale overwrites and returns the server's current record. Sync does not replace private recovery backups. Use a separate browser profile for another owner.
 
-## Free Supabase cloud connection
+GitHub Actions runs tests/build on pushes and pull requests and publishes `form-offline-web` as a downloadable static artifact. Vercel deploys from GitHub using `vercel.json`. No GitHub secrets are required for this route; add server variables to the Vercel project. The existing Pages workflow is an optional offline-only deployment of `web/`; it cannot host the sync API.
 
-1. Create your own free Supabase project.
-2. Run `supabase-setup.sql` in its SQL Editor.
-3. Create a user under Authentication → Users; use a strong password and confirm the account as appropriate.
-4. In app Settings, enter the project HTTPS URL and public anon/publishable key. Never use a secret/service-role key.
-5. Sign in, log a record, tap Sync now. Verify a row appears in `journal`.
-6. Test with a second account: it must not be able to read the first user's rows. Client account binding also prevents accidentally syncing this device's journal to another account.
-
-Records sync on sign-in, online saves, reconnect, resume, and every three minutes while the visible app has queued changes. App-closed timing is not guaranteed. Sign-in credentials are stored in sessionStorage; sign in again when the browser session ends. Public project configuration remains in localStorage. Profile preferences are local and are included in exports but are not cloud synced.
-
-Each record has a UUID and timestamp. Deletions are tombstones. Import merges records rather than replacing history. Server-side updates preserve newer timestamps, avoiding a stale-device overwrite. Conflicting edits to the same record use latest timestamp, not field-level reconciliation; accurate device clocks matter. Records can be added independently on multiple devices. Do not share the browser profile with others.
-
-Cloud sync is not a historical recovery backup. Free Supabase projects may pause; regularly export a JSON backup and store it privately. Limits and free-service availability can change. No paid service or automatic upgrade is configured.
+On Android Chrome, open the HTTPS Vercel URL, let resources load, then choose menu → Add to home screen / Install. A plain HTTP LAN address will not enable offline installation. Videos remain online-only.
 
 ## What is included
 
@@ -47,7 +41,7 @@ Cloud sync is not a historical recovery backup. Free Supabase projects may pause
 - Measurement charts, exercise history, conservative progression guidance
 - Optional pelvic-floor education/logging toggle
 - Offline asset cache, durable-storage request, JSON export/import
-- Optional authenticated cloud sync with database row-level security
+- Optional authenticated Neon cloud sync with server-enforced account isolation
 
 ## Deliberate limitations
 
@@ -59,7 +53,7 @@ Recurring elbow/wrist tingling needs assessment. Do not progress through symptom
 
 After changing app files, bump the cache version in `web/sw.js`. An update waits until existing tabs close, avoiding abrupt replacement during a workout. Check JavaScript syntax with `node --check web/app.js` (and other JS files). Run meaningful record merge/validation tests with `node --test tests/store.test.mjs`.
 
-Before real use, verify on the S24: installation, offline reload/logging, reconnect sync, sound/vibration, export/import, and account isolation. Cloud end-to-end checks require your project credentials and SQL setup.
+Before real use, verify on the S24: installation, offline reload/logging, reconnect sync, sound/vibration, export/import, and account isolation. Cloud end-to-end checks require a PostgreSQL database and migrated schema; see DEPLOYMENT.md.
 
 ## Work-in-progress resources
 
