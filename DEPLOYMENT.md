@@ -83,6 +83,18 @@ On your phone, open the Vercel HTTPS URL in Chrome, sign in, tap **Sync now**, t
 
 The app saves locally first. Session credentials use an HttpOnly cookie, API responses are never cached by the service worker, and database secrets never enter browser storage. Sign-out switches to a separate guest journal and preserves each account's local data. Offline sign-out is completed on the server on reconnect. Local journals and exported backups are not encrypted; a person with access to the same unlocked browser profile can inspect browser storage. Keep private JSON backups; timestamp conflict resolution is not recovery history.
 
+## Optional GitHub Pages deployment
+
+The full app uses Vercel: GitHub Pages only serves the static offline journal and cannot run the authentication, SMTP or Neon sync API. Keep Pages disabled when using Vercel alone. The Pages deployment job is skipped by default, including manual runs, so an unconfigured Pages site does not fail every merge to `main`. The build/test workflow still runs and uploads the static artifact.
+
+If you want an additional offline-only Pages site:
+
+1. In the repository's **Settings → Pages**, enable Pages with **Source: GitHub Actions**. Verify that your repository visibility and GitHub plan support Pages.
+2. In **Settings → Secrets and variables → Actions → Variables**, create the repository variable `ENABLE_GITHUB_PAGES` with the value `true`. This is a non-secret repository variable, not an environment variable or secret.
+3. Run **Deploy optional offline app to GitHub Pages** manually from Actions, or push a change to `main`.
+
+If `actions/configure-pages` reports **Get Pages site failed / Not Found**, check the Pages setting and repository eligibility before retrying. Leave `ENABLE_GITHUB_PAGES` unset or set it to `false` to skip the optional deployment. Enabling the variable does not provision a Pages site or configure Vercel.
+
 ## Verification
 
 ```sh
