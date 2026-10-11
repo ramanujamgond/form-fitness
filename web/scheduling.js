@@ -1,4 +1,6 @@
-import {week} from './content.js?v=19';
+import {validDate,validBreak} from './dates.js';
+export {validDate,validBreak} from './dates.js';
+import {week} from './content.js?v=20';
 const rest=()=>({...week[0],ids:[]});
 const fullA={name:'Full body A + core',kind:'Strength',ids:['press','row','legpress','bridge','deadbug']};
 const fullB={name:'Full body B + core',kind:'Strength',ids:['press','pulldown','squat','curl','deadbug']};
@@ -10,8 +12,6 @@ export function weeklyPlan(days=5){
 }
 export function frequencyOn(profile,date){const rows=(profile.planHistory||[]).filter(r=>r.effectiveFrom<=date).sort((a,b)=>a.effectiveFrom.localeCompare(b.effectiveFrom));return rows.at(-1)?.days||(profile.planHistory?.length?5:profile.workoutDays||5);}
 export function setFrequency(profile,days,date){const n=Number(days);if(!Number.isInteger(n)||n<1||n>7)throw Error('Choose between 1 and 7 activity days.');if(n===profile.workoutDays)return profile;const history=(profile.planHistory||[]).filter(r=>r.effectiveFrom!==date);history.push({effectiveFrom:date,days:n});if(history.length>365)throw Error('Too many plan changes. Export a backup before adjusting the schedule further.');return {...profile,workoutDays:n,planHistory:history.sort((a,b)=>a.effectiveFrom.localeCompare(b.effectiveFrom))};}
-export function validDate(value){return typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T12:00:00Z'))&&new Date(value+'T12:00:00Z').toISOString().slice(0,10)===value;}
-export function validBreak(start,end){return validDate(start)&&validDate(end)&&end>=start&&(Date.parse(end)-Date.parse(start))/86400000<=365;}
 export function dayPlan(profile,records,date){
  const rows=records.filter(r=>!r.deleted),day=rows.filter(r=>r.date===date),weekday=new Date(date+'T12:00:00').getDay();
  const override=day.filter(r=>r.type==='schedule').sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0];
