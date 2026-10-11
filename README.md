@@ -25,7 +25,7 @@ Each verified account has its own server journal and local IndexedDB database. W
 
 Deletions are tombstones. Conflicts use the latest record timestamp, rather than field-level merging; accurate device clocks matter. The API derives ownership from the verified session and rejects uploads from a stale account tab. Sign-out switches to a separate guest journal and keeps the account's local records for later sign-in. Local storage is not encrypted; use separate device/browser profiles when sharing an unlocked device. Sync does not replace private recovery backups.
 
-GitHub Actions runs tests/build on pushes and pull requests and publishes `form-offline-web` as a downloadable static artifact. Vercel deploys from GitHub using `vercel.json`. No GitHub secrets are required for this route; add server variables to the Vercel project. The existing Pages workflow is an optional offline-only deployment of `web/`; it cannot host the sync API.
+GitHub Actions runs tests/build on pushes and pull requests and publishes `form-offline-web` as a downloadable static artifact. Vercel deploys from GitHub using `vercel.json`. No GitHub secrets are required for this route; add server variables to the Vercel project. The Pages workflow is an optional offline-only deployment of `web/`; it cannot host signup, email recovery or the sync API. It skips deployment unless the repository Actions variable `ENABLE_GITHUB_PAGES` is set to `true`. See [DEPLOYMENT.md](DEPLOYMENT.md) for setup before enabling it.
 
 On Android Chrome, open the HTTPS Vercel URL, let resources load, then choose menu → Add to home screen / Install. A plain HTTP LAN address will not enable offline installation. Videos remain online-only.
 

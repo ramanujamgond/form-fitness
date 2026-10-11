@@ -1,4 +1,4 @@
-name: Deploy app
+name: Deploy optional offline app to GitHub Pages
 on:
   push:
     branches: [main]
@@ -12,6 +12,8 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
+    # Vercel hosts the full app. Pages is an optional static/offline deployment.
+    if: ${{ vars.ENABLE_GITHUB_PAGES == 'true' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
