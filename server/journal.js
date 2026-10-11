@@ -6,11 +6,12 @@ export function journalHandler(getRuntime) {
   return async (req, res) => {
     try {
       if (!['GET', 'POST'].includes(req.method)) { res.setHeader('Allow', 'GET, POST'); return json(res, 405, { message: 'Method not allowed' }); }
-      const { pool, auth, origin, allowedEmail } = getRuntime();
+      const { pool, auth, origin } = getRuntime();
       if (req.method === 'POST' && req.headers.origin !== origin) return json(res, 403, { message: 'Origin rejected' });
       const session = await auth.api.getSession({ headers: fromNodeHeaders(req.headers) });
-      if (!session?.user || session.user.email.toLowerCase() !== allowedEmail) return json(res, 401, { message: 'Sign in to your configured account.' });
+      if (!session?.user?.emailVerified) return json(res, 401, { message: 'Verify your email and sign in to access your journal.' });
       const owner = session.user.id;
+      if (req.headers['x-form-account'] && req.headers['x-form-account'] !== owner) return json(res, 409, {message:'Your signed-in account changed. Reconnect before syncing.'});
       if (req.method === 'GET') {
         const url = new URL(req.url, origin);
         const cursor = url.searchParams.get('after') || '';

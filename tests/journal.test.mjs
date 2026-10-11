@@ -4,7 +4,7 @@ import { journalHandler } from '../server/journal.js';
 
 const origin = 'https://form.example.com';
 const row = (updatedAt = '2026-10-10T10:00:00.000Z', extra = {}) => ({ id:'record-1', type:'set', date:'2026-10-10', data:{reps:8}, updatedAt, deleted:false, dirty:true, ...extra });
-function setup(session = { user:{id:'owner', email:'owner@example.com'} }) {
+function setup(session = { user:{id:'owner', email:'owner@example.com',emailVerified:true} }) {
   const data = new Map(); const calls = [];
   const query = async (sql, args) => {
     calls.push([sql,args]);
@@ -25,8 +25,8 @@ function setup(session = { user:{id:'owner', email:'owner@example.com'} }) {
   };
   return {data,calls,request};
 }
-test('anonymous and non-owner users cannot access journal',async()=>{
-  for(const session of [null,{user:{id:'other',email:'other@example.com'}}]){
+test('anonymous and unverified users cannot access journal',async()=>{
+  for(const session of [null,{user:{id:'other',email:'other@example.com',emailVerified:false}}]){
     const s=setup(session);assert.equal((await s.request('GET')).statusCode,401);assert.equal(s.calls.length,0);
   }
 });
@@ -51,4 +51,14 @@ test('malformed, oversized and noncanonical timestamps are rejected',async()=>{
     assert.equal((await s.request('POST',body)).statusCode,400);
   }
   assert.equal(s.calls.length,0);
+});
+
+test('a second verified account can use its own journal without the original email',async()=>{
+ const s=setup({user:{id:'sister',email:'sister@example.com',emailVerified:true}});
+ assert.equal((await s.request()).statusCode,200);
+ assert.ok(s.data.has('sister:record-1'));assert.ok(!s.data.has('owner:record-1'));
+});
+test('a stale account tab cannot upload through another account session',async()=>{
+ const s=setup();assert.equal((await s.request('POST',[row()],{origin,'x-form-account':'sister'})).statusCode,409);
+ assert.equal(s.calls.length,0);
 });
