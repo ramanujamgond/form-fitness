@@ -1,6 +1,7 @@
-const CACHE='form-v20';
-const IMAGES=['assisted','bench','bike','cable','cablerow','calfstep','curl','dumbbells','legpress','mat','press','pulldown','row','treadmill'].map(n=>`./img/equipment/${n}.jpg`).concat(['upper','lower','cardio','recovery'].map(n=>`./img/scenes/${n}.jpg`),['assisted','press','row','pulldown','raise','pushup','legpress','squat','curl','bridge','calf','deadbug','walk','cablerow'].map(n=>`./img/generated/${n}.webp`),[0,1,2,3,4].map(n=>`./img/meals/${n}.jpg`));
-const ASSETS=['./','./index.html','./style.css?v=20','./app.js?v=20','./content.js?v=20','./charts.js?v=20','./diagrams.js?v=20','./store.js','./dates.js','./scheduling.js','./scheduling.js?v=20','./accounts.js?v=20','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png',...IMAGES];
+const CACHE='form-v21';
+const EQUIPMENT_PHOTOS=['press','pulldown','cablerow','legpress','curl','dumbbells','cable','bench','mat','treadmill','bike'].map(n=>`./img/equipment-photos/${n}.webp`);
+const IMAGES=['assisted','press','row','pulldown','raise','pushup','legpress','squat','curl','bridge','calf','deadbug','walk','cablerow'].map(n=>`./img/generated/${n}.webp`).concat([0,1,2,3,4].map(n=>`./img/meals/${n}.webp`));
+const ASSETS=['./','./index.html','./style.css?v=21','./app.js?v=21','./content.js?v=21','./charts.js?v=21','./diagrams.js?v=21','./store.js','./dates.js','./scheduling.js','./scheduling.js?v=21','./accounts.js?v=21','./manifest.webmanifest','./icon.svg','./icon-192.png','./icon-512.png','./img/basics/rest.webp','./img/basics/load.webp',...EQUIPMENT_PHOTOS,...IMAGES];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)));});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('form-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{

@@ -147,8 +147,8 @@ const details={
  walk:{breathing:'Breathe easily; you should be able to talk in full sentences.',progression:'Add 5 minutes per week up to 30 minutes before adding speed or incline.',stop:'Chest discomfort, dizziness, or unusual breathlessness.'},
  cablerow:{breathing:'Exhale as you pull; inhale as you return.',progression:'When every set reaches 12 clean reps without rocking, add the smallest load step.',stop:'Lower-back strain, elbow pain or arm tingling.'}
 };
-for(const [id,d] of Object.entries(details))Object.assign(exercises[id],id==='walk'?{rest:'Not needed; keep a steady easy pace',tempo:'Comfortable, even steps',rir:'Talk-test pace: you can speak in full sentences'}:strength,d,{img:`./img/exercises/${id}.jpg`,photo:exercisePhoto[id]||null});
-meals.forEach((m,i)=>{m.img=`./img/meals/${i}.jpg`;});
+for(const [id,d] of Object.entries(details))Object.assign(exercises[id],id==='walk'?{rest:'Not needed; keep a steady easy pace',tempo:'Comfortable, even steps',rir:'Talk-test pace: you can speak in full sentences'}:strength,d,{photo:exercisePhoto[id]||null});
+meals.forEach((m,i)=>{m.img=`./img/meals/${i}.webp`;});
 
 // Original previews are supplied by each demonstration publisher, not AI-generated.
 // Small JPEGs are hotlinked; videos load only after a tap. Verified metadata is in resources/media-audit.json.
@@ -161,3 +161,12 @@ exercises.deadbug.rest='60–90 seconds between sets; longer if needed';
 exercises.deadbug.rir='Stop with control remaining; finish before the back arches or breathing is held';
 exercises.deadbug.progression='Start with short bent-knee reaches, then build to 10 controlled reps per side. Once both sets remain steady and symptom-free across sessions, lengthen the reach or add the opposite arm. Change one thing at a time.';
 sources.push(['Gradual core training & abdominal definition','https://www.nasm.org/resource-center/blog/training/core-training-programming']);
+
+// Compressed local copies preserve source attribution in the equipment detail.
+for(const [id,t] of Object.entries(tools)){
+ const generated={assisted:'assisted',calfstep:'calf',row:'row'}[id];
+ t.image=generated?`./img/generated/${generated}.webp`:`./img/equipment-photos/${id}.webp`;
+ t.imageKind=generated?'generated':'photo';
+ if(generated)t.photo={url:`https://i.ytimg.com/vi/${t.youtube}/hqdefault.jpg`,page:`https://www.youtube.com/watch?v=${t.youtube}`,author:t.videoLabel.split(' · ').at(-1),license:'Publisher preview · rights retained by original creator',kind:'video'};
+ else t.photo={...t.photo,url:t.image,license:t.photo.license+' · resized/compressed'};
+}

@@ -1,18 +1,23 @@
-const T=(x,y,t,o='')=>`<text x="${x}" y="${y}" font-size="11" fill="#19191f" ${o}>${t}</text>`,S=(x,y,t,o='')=>`<text x="${x}" y="${y}" font-size="10" fill="#6c6c79" ${o}>${t}</text>`;
-const dots=(x,y,n,filled,gap=14)=>Array.from({length:n},(_,i)=>`<circle cx="${x+i*gap}" cy="${y}" r="5" fill="${i<filled?'#7041d8':'#fff'}" stroke="#7041d8" stroke-width="1.5"/>`).join('');
-const visuals={
- rep:()=>`<path d="M60 30v50" stroke="#c4adf2" stroke-width="10" stroke-linecap="round"/><path d="M40 40l20-16 20 16M40 70l20 16 20-16" stroke="#7041d8" stroke-width="3" fill="none" stroke-linecap="round"/>${T(100,40,'Lower with control')}${T(100,80,'Return to the start')}${S(100,104,'Down + up = 1 rep')}`,
- set:()=>`${[0,1].map(s=>`<rect x="${14+s*160}" y="30" width="146" height="44" rx="8" fill="#f0eafa"/>${dots(30+s*160,52,10,10)}${T(14+s*160,22,`Set ${s+1}`)}`).join('')}${S(14,98,'2 × 10 = 2 sets of 10 reps, with rest between sets')}`,
- rest:()=>`<rect x="14" y="40" width="80" height="22" rx="5" fill="#7041d8"/><rect x="98" y="40" width="124" height="22" rx="5" fill="#efedf5"/><rect x="226" y="40" width="80" height="22" rx="5" fill="#7041d8"/>${T(28,56,'Set 1','fill="#fff"')}${T(118,56,'Rest 90–120 s')}${T(240,56,'Set 2','fill="#fff"')}${S(14,92,'Rest lets you repeat good technique on the next set')}`,
- rir:()=>`${dots(26,48,12,10,24)}${S(26,74,'10 reps done')}${S(254,74,'2 left')}<path d="M262 30h28" stroke="#7041d8"/>${T(14,22,'Stopped with 2 clean reps still possible → RIR 2')}${S(14,104,'Foundation target: finish each set at RIR 2–3')}`,
- rpe:()=>`${Array.from({length:10},(_,i)=>`<rect x="${14+i*30}" y="34" width="26" height="26" rx="4" fill="${i>=6&&i<=7?'#7041d8':'#efedf5'}"/><text x="${27+i*30}" y="51" font-size="11" text-anchor="middle" fill="${i>=6&&i<=7?'#fff':'#19191f'}">${i+1}</text>`).join('')}${S(14,80,'Easy')}${S(306,80,'Maximal','text-anchor="end"')}${T(14,104,'RPE 7–8 ≈ 2–3 reps in reserve (RPE ≈ 10 − RIR)')}`,
- range:()=>`<path d="M20 50H300" stroke="#efedf5" stroke-width="14" stroke-linecap="round"/><path d="M124 50H228" stroke="#7041d8" stroke-width="14" stroke-linecap="round"/>${[4,6,8,10,12,14].map((n,i)=>S(20+i*52,80,n,'text-anchor="middle"')).join('')}${T(124,28,'Target zone 8–12 reps')}${S(20,104,'Reach 12 on every set with good form → consider a small increase')}`,
- load:()=>`<rect x="40" y="36" width="70" height="50" rx="6" fill="#efedf5"/><rect x="50" y="46" width="50" height="8" fill="#c4adf2"/><rect x="50" y="58" width="50" height="8" fill="#7041d8"/><rect x="50" y="70" width="50" height="8" fill="#c4adf2"/>${T(130,50,'Pin on the stack = load in kg')}${S(130,70,'Compare only on the same machine')}${S(130,88,'Assisted pull-up: lower number = harder')}`,
- volume:()=>`${[['2','sets'],['10','reps'],['20 kg','load'],['400 kg','volume']].map(([v,l],i)=>`<rect x="${10+i*78}" y="30" width="64" height="44" rx="8" fill="${i===3?'#7041d8':'#f0eafa'}"/><text x="${42+i*78}" y="52" font-size="13" font-weight="700" text-anchor="middle" fill="${i===3?'#fff':'#19191f'}">${v}</text><text x="${42+i*78}" y="67" font-size="9" text-anchor="middle" fill="${i===3?'#fff':'#6c6c79'}">${l}</text>${i<3?`<text x="${79+i*78}" y="56" font-size="14" text-anchor="middle" fill="#6c6c79">${i===2?'=':'×'}</text>`:''}`).join('')}${S(10,100,'Sets × reps × load')}`,
- warmup:()=>`${[18,30,0,56,56].map((h,i)=>h?`<rect x="${30+i*54}" y="${80-h}" width="34" height="${h}" rx="4" fill="${i>2?'#7041d8':'#c4adf2'}"/>`:'').join('')}${S(30,98,'Warm-up sets (light)')}${S(192,98,'Working sets (logged)')}${T(30,18,'Load')}`,
- tempo:()=>`<rect x="14" y="40" width="160" height="22" rx="5" fill="#9b77e8"/><rect x="178" y="40" width="20" height="22" rx="5" fill="#efedf5"/><rect x="202" y="40" width="80" height="22" rx="5" fill="#7041d8"/>${T(24,56,'Lower ≈ 2 s','fill="#fff"')}${S(178,80,'pause 0')}${T(210,56,'Lift ≈ 1 s','fill="#fff"')}${S(14,104,'Smooth and controlled matters more than exact seconds')}`,
- overload:()=>`${[0,1,2,3].map(i=>`<rect x="${24+i*70}" y="${80-i*14-14}" width="62" height="${14+i*14}" rx="4" fill="${i===3?'#7041d8':'#c4adf2'}"/>${S(30+i*70,98,`Week ${i*2+1}`)}`).join('')}${T(24,22,'Small steps: +1 rep → +1 set → smallest load step')}`,
- form:()=>`${T(24,34,'Steady position · controlled movement')}${T(24,60,'Comfortable range · keep breathing')}${T(24,86,'Stop for pain or tingling')}`,
- superset:()=>`<rect x="14" y="40" width="80" height="22" rx="5" fill="#7041d8"/><rect x="100" y="40" width="80" height="22" rx="5" fill="#9b77e8"/><rect x="186" y="40" width="120" height="22" rx="5" fill="#efedf5"/>${T(28,56,'Exercise A','fill="#fff"')}${T(112,56,'Exercise B','fill="#fff"')}${T(206,56,'Rest')}${S(14,92,'Not used in the foundation plan')}`
+// Shared photos explain training terms; text carries the exact counts and timing.
+const media={
+ rep:['squat','Stand → lower to the bench → stand again. That complete cycle is one rep.'],
+ set:['press','Example: 10 controlled chest presses, rest, then another 10 = 2 sets of 10.'],
+ rest:['rest','Pause between sets. Use the timer for about 90–120 seconds, or longer if needed.'],
+ rir:['press','Stop while you could still perform 2–3 more clean repetitions.'],
+ rpe:['press','RPE 7–8 is roughly 2–3 clean reps left. Your effort rating is an estimate.'],
+ range:['squat','8–12 means a target range of repetitions, with controlled technique throughout.'],
+ load:['load','The selector pin chooses resistance. Check the units and settings on your own machine.'],
+ volume:['press','Example: 2 sets × 10 reps × 20 kg = 400 kg of logged volume.'],
+ warmup:['press','Rehearse with a light preparation load before logging your working sets.'],
+ tempo:['squat','Move smoothly: about 2 seconds lowering and 1 second lifting. Keep breathing.'],
+ overload:['load','Build controlled reps first, then consider the smallest weight step when ready.'],
+ form:['row','Keep a steady position and move through a comfortable range without jerking.'],
+ superset:['press','A superset pairs two different exercises before resting. It is not used in this beginner plan.']
 };
-export function basicsVisual(id,label){const v=visuals[id];return v?`<svg class="basic-visual" viewBox="0 0 320 112" role="img" aria-label="${label}">${v()}</svg>`:'';}
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function basicsVisual(id,label){
+ const entry=media[id];if(!entry)return '';
+ const [photo,caption]=entry,path=['rest','load'].includes(photo)?`./img/basics/${photo}.webp`:`./img/generated/${photo}.webp`;
+ return `<figure class="basic-media"><img src="${path}" alt="${esc(label)} — ${esc(caption)}" width="800" height="450" loading="lazy" decoding="async"><figcaption><small>AI-generated teaching image</small><p>${esc(caption)}</p></figcaption></figure>`;
+}
+export function basicsExercise(id){const photo=media[id]?.[0];return ['rest','load'].includes(photo)?null:photo;}

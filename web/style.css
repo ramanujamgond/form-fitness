@@ -3,3 +3,5 @@ h4{font-size:13px;margin:16px 0 4px;font-weight:700}.ex-hero,.meal-img{display:b
 
 /* Keep exercise controls visible and tap targets comfortable on phones. */
 .page-links,.session-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.page-links .btn,.session-links .btn{min-height:44px}.exercise{scroll-margin-top:20px}.exercise:focus{outline:2px solid #7041d8;outline-offset:3px}.ex-hero{object-fit:contain;height:auto}.ref-photo img{object-fit:contain;max-height:320px}.session-links .btn{text-align:left}
+
+.basic-media{margin:12px 0}.basic-media img{display:block;width:100%;height:auto;border-radius:10px;object-fit:contain;background:#faf9fd}.basic-media figcaption p{margin:8px 0}.tool img{object-fit:cover}.tool-img{width:100%;height:auto;max-height:320px;object-fit:contain}
