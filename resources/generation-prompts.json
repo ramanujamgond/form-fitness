@@ -1,0 +1,128 @@
+{
+  "assisted": {
+    "name": "Assisted pull-up",
+    "setup": "Have staff demonstrate the assistance platform and safe entry/exit. More assistance makes the movement easier.",
+    "cues": [
+      "Choose enough assistance for controlled reps.",
+      "Pull without swinging or shrugging.",
+      "Lower smoothly; stop with pain or tingling."
+    ]
+  },
+  "press": {
+    "name": "Machine chest press",
+    "setup": "Adjust the seat so handles meet mid-chest. Keep feet planted and back supported.",
+    "cues": [
+      "Keep wrists aligned with forearms.",
+      "Press smoothly without shrugging.",
+      "Return through a comfortable range."
+    ]
+  },
+  "row": {
+    "name": "Chest-supported row",
+    "setup": "Adjust the chest pad and seat. Place feet securely and begin with a light load.",
+    "cues": [
+      "Keep chest in contact with the pad.",
+      "Drive elbows back without shrugging.",
+      "Return slowly without jerking."
+    ]
+  },
+  "pulldown": {
+    "name": "Lat pulldown",
+    "setup": "Secure the thigh pad, plant feet, and choose a comfortable grip.",
+    "cues": [
+      "Sit tall with a small natural lean.",
+      "Drive elbows downward toward your sides.",
+      "Return with control."
+    ]
+  },
+  "raise": {
+    "name": "Lateral raise",
+    "setup": "Use light dumbbells or a confirmed machine, with a relaxed grip.",
+    "cues": [
+      "Keep elbows slightly bent.",
+      "Raise within a comfortable range.",
+      "Lower slowly, keeping shoulders away from ears."
+    ]
+  },
+  "pushup": {
+    "name": "Push-up",
+    "setup": "Use a stable surface. Choose an incline if floor repetitions are too demanding.",
+    "cues": [
+      "Keep head, torso, and hips aligned.",
+      "Brace gently and lower with control.",
+      "Press back up without hips sagging."
+    ]
+  },
+  "legpress": {
+    "name": "Leg press",
+    "setup": "Set seat/backrest, learn safety stops, and place feet comfortably on the platform.",
+    "cues": [
+      "Keep knees tracking in the direction of toes.",
+      "Lower only while pelvis and back remain supported.",
+      "Press smoothly without snapping knees straight."
+    ]
+  },
+  "squat": {
+    "name": "Squat to bench",
+    "setup": "Use a stable bench behind you. Start without external weight.",
+    "cues": [
+      "Keep whole feet planted.",
+      "Bend hips and knees together.",
+      "Touch the bench gently and stand with control."
+    ]
+  },
+  "curl": {
+    "name": "Leg curl",
+    "setup": "Align knees with the machine pivot and position pads as its instructions show.",
+    "cues": [
+      "Keep hips supported.",
+      "Bend knees smoothly.",
+      "Return slowly without lifting your hips."
+    ]
+  },
+  "bridge": {
+    "name": "Glute bridge",
+    "setup": "Lie on your back with knees bent and feet flat, arms relaxed.",
+    "cues": [
+      "Exhale and brace gently.",
+      "Lift hips until shoulders, hips, and knees align.",
+      "Lower without arching your lower back."
+    ]
+  },
+  "calf": {
+    "name": "Calf raise",
+    "setup": "Stand on a flat surface with light support for balance.",
+    "cues": [
+      "Rise through the balls of your feet.",
+      "Pause briefly.",
+      "Lower heels slowly."
+    ]
+  },
+  "deadbug": {
+    "name": "Dead bug",
+    "setup": "Lie on your back with hips and knees bent. Start with legs only if needed.",
+    "cues": [
+      "Breathe normally with a gentle brace.",
+      "Extend one leg only as far as your trunk stays still.",
+      "Return and alternate sides."
+    ]
+  },
+  "walk": {
+    "name": "Easy cardio",
+    "setup": "Choose walking or cycling at an intensity that permits conversation.",
+    "cues": [
+      "Start easy and build gradually.",
+      "Use a comfortable pace.",
+      "Finish with a few easier minutes."
+    ]
+  },
+  "cablerow": {
+    "name": "Seated cable row",
+    "setup": "Use the low-pulley row station. Sit with feet supported and knees slightly bent. Choose a comfortable handle.",
+    "cues": [
+      "Keep the trunk steady and wrists aligned.",
+      "Draw elbows back toward your sides.",
+      "Return slowly without rounding or rocking your back."
+    ]
+  }
+}

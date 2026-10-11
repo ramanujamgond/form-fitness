@@ -1,3 +1,4 @@
+-- Legacy Supabase setup, retained for old deployments only. The current app uses Neon; see DEPLOYMENT.md.
 -- Run in the Supabase SQL Editor. Never publish credentials in this file.
 create table if not exists public.journal (
   user_id uuid not null references auth.users(id) on delete cascade,
