@@ -1,0 +1,93 @@
+[
+  {
+    "id": "assisted",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Assisted pull-up. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Have staff demonstrate the assistance platform and safe entry/exit. More assistance makes the movement easier. Movement: Choose enough assistance for controlled reps. Pull without swinging or shrugging. Lower smoothly; stop with pain or tingling.. Depict a comfortable beginner range. Use assisted pull-up machine with BOTH hands holding OVERHEAD pull-up bar, knees on assistance platform; left arms nearly extended, right chin near overhead bar. Do NOT show dip handles. Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/assisted-steps.png",
+    "asset": "web/img/coach/assisted-steps.webp"
+  },
+  {
+    "id": "press",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Machine chest press. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Adjust the seat so handles meet mid-chest. Keep feet planted and back supported. Movement: Keep wrists aligned with forearms. Press smoothly without shrugging. Return through a comfortable range.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/press-steps.png",
+    "asset": "web/img/coach/press-steps.webp"
+  },
+  {
+    "id": "row",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Chest-supported row. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Adjust the chest pad and seat. Place feet securely and begin with a light load. Movement: Keep chest in contact with the pad. Drive elbows back without shrugging. Return slowly without jerking.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/row-steps.png",
+    "asset": "web/img/coach/row-steps.webp"
+  },
+  {
+    "id": "pulldown",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Lat pulldown. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Secure the thigh pad, plant feet, and choose a comfortable grip. Movement: Sit tall with a small natural lean. Drive elbows downward toward your sides. Return with control.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/pulldown-steps.png",
+    "asset": "web/img/coach/pulldown-steps.webp"
+  },
+  {
+    "id": "raise",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Lateral raise. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Use light dumbbells or a confirmed machine, with a relaxed grip. Movement: Keep elbows slightly bent. Raise within a comfortable range. Lower slowly, keeping shoulders away from ears.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/raise-steps.png",
+    "asset": "web/img/coach/raise-steps.webp"
+  },
+  {
+    "id": "pushup",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Push-up. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Use a stable surface. Choose an incline if floor repetitions are too demanding. Movement: Keep head, torso, and hips aligned. Brace gently and lower with control. Press back up without hips sagging.. Depict a comfortable beginner range. Use an incline push-up with both hands on the SAME stable fixed gym bench, feet on floor, straight head-to-heel line. Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/pushup-steps.png",
+    "asset": "web/img/coach/pushup-steps.webp"
+  },
+  {
+    "id": "legpress",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Leg press. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Set seat/backrest, learn safety stops, and place feet comfortably on the platform. Movement: Keep knees tracking in the direction of toes. Lower only while pelvis and back remain supported. Press smoothly without snapping knees straight.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/legpress-steps.png",
+    "asset": "web/img/coach/legpress-steps.webp"
+  },
+  {
+    "id": "squat",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Squat to bench. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Use a stable bench behind you. Start without external weight. Movement: Keep whole feet planted. Bend hips and knees together. Touch the bench gently and stand with control.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/squat-steps.png",
+    "asset": "web/img/coach/squat-steps.webp"
+  },
+  {
+    "id": "curl",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Leg curl. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Align knees with the machine pivot and position pads as its instructions show. Movement: Keep hips supported. Bend knees smoothly. Return slowly without lifting your hips.. Depict a comfortable beginner range. Use SEATED leg curl, back against seat, thigh pad secures thighs; ankle roller front of lower legs; first knees nearly straight and then flexed pulling the roller under seat. Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/curl-steps.png",
+    "asset": "web/img/coach/curl-steps.webp"
+  },
+  {
+    "id": "bridge",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Glute bridge. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Lie on your back with knees bent and feet flat, arms relaxed. Movement: Exhale and brace gently. Lift hips until shoulders, hips, and knees align. Lower without arching your lower back.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/bridge-steps.png",
+    "asset": "web/img/coach/bridge-steps.webp"
+  },
+  {
+    "id": "calf",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Calf raise. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Stand on a flat surface with light support for balance. Movement: Rise through the balls of your feet. Pause briefly. Lower heels slowly.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/calf-steps.png",
+    "asset": "web/img/coach/calf-steps.webp"
+  },
+  {
+    "id": "deadbug",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Dead bug. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Lie on your back with hips and knees bent. Start with legs only if needed. Movement: Breathe normally with a gentle brace. Extend one leg only as far as your trunk stays still. Return and alternate sides.. Depict a comfortable beginner range. Use legs-only dead bug: both arms rest on floor, left image tabletop knees bent, right image one heel reaching toward floor with the OTHER leg still in tabletop. Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/deadbug-steps.png",
+    "asset": "web/img/coach/deadbug-steps.webp"
+  },
+  {
+    "id": "cablerow",
+    "prompt": "Two-panel photorealistic educational fitness photograph, left START position and right FINISH position of Seated cable row. Same adult Indian male trainer in a teal athletic T-shirt, charcoal shorts and training shoes on both sides. Correct anatomy, all limbs visible, uncluttered bright gym, side or three-quarter camera showing joints and equipment alignment. Exercise-specific setup: Use the low-pulley row station. Sit with feet supported and knees slightly bent. Choose a comfortable handle. Movement: Keep the trunk steady and wrists aligned. Draw elbows back toward your sides. Return slowly without rounding or rocking your back.. Depict a comfortable beginner range.  Keep exactly the same equipment in both photographs. No illustration, no line art, no cartoon, no vectors, no arrows, no text, no labels, no borders. Realistic skin and equipment. This is a photographic teaching reference, not an artistic drawing.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/cablerow-steps.png",
+    "asset": "web/img/coach/cablerow-steps.webp"
+  }
+]

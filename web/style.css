@@ -5,3 +5,96 @@ h4{font-size:13px;margin:16px 0 4px;font-weight:700}.ex-hero,.meal-img{display:b
 .page-links,.session-links{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}.page-links .btn,.session-links .btn{min-height:44px}.exercise{scroll-margin-top:20px}.exercise:focus{outline:2px solid #7041d8;outline-offset:3px}.ex-hero{object-fit:contain;height:auto}.ref-photo img{object-fit:contain;max-height:320px}.session-links .btn{text-align:left}
 
 .basic-media{margin:12px 0}.basic-media img{display:block;width:100%;height:auto;border-radius:10px;object-fit:contain;background:#faf9fd}.basic-media figcaption p{margin:8px 0}.tool img{object-fit:cover}.tool-img{width:100%;height:auto;max-height:320px;object-fit:contain}
+
+/* Guided journeys keep the next action distinct from supporting information. */
+body{font-size:16px;line-height:1.6}
+h3{font-size:18px}
+.next-action,.beginner-guide{border-color:#b99ce9;background:#faf8ff}
+.journey{padding-left:24px}
+.journey li{padding:12px 0 4px}
+.session-progress{list-style:none;padding:0;margin:0}
+.session-progress li{padding:12px;border-bottom:1px solid var(--line);border-radius:8px}
+.session-progress small{display:block}
+.current-step{background:var(--lime);font-weight:650}
+.meal-timeline{border-left:3px solid #e3d8f8;padding-left:16px}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+fieldset:disabled{opacity:.65}
+.btn.small{min-height:44px}
+.card .btn{max-width:100%;white-space:normal}
+input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #9b77e8;outline-offset:3px}
+@media(max-width:640px){.meal-timeline .row{flex-wrap:wrap}.exercise>.row{flex-wrap:wrap}}
+
+.coach-context{font-size:12px;color:var(--muted);margin:8px 0 12px}
+.coach-path{display:flex;gap:6px;margin-bottom:20px}
+.coach-path span{flex:1;text-align:center;padding:8px 4px;border-radius:8px;background:#efedf5;color:var(--muted);font-size:12px}
+.coach-path .active{background:var(--accent);color:white;font-weight:650}
+.coach-step h1{font-size:30px;margin:8px 0 16px;line-height:1.2}
+.coach-dose{display:inline-block;padding:7px 12px;background:var(--lime);color:var(--accent);border-radius:8px;font-weight:650;margin:0 0 10px}
+.coach-image{display:block;width:100%;height:auto;max-height:260px;object-fit:contain;background:#f1ebfb;border-radius:12px;margin:16px 0}
+.coach-instructions{padding-left:26px;counter-reset:step}
+.coach-instructions li{padding:5px 0 8px 5px}
+.coach-instructions li::marker{color:var(--accent);font-weight:700}
+.coach-primary{margin:20px 0 12px}
+.coach-primary>.btn{width:100%;min-height:52px;font-size:16px}
+.coach-caution{border-left:3px solid #a55c28;padding-left:12px;font-size:14px;color:#875726}
+.coach-equipment{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.coach-equipment>div{display:flex;align-items:center;gap:12px;flex:1;min-width:200px;padding:12px;background:#faf9fd;border-radius:10px}
+.coach-equipment img{width:80px;height:80px;object-fit:contain;border-radius:8px}
+.coach-rest{font-size:72px;text-align:center;color:var(--accent);margin:24px 0}
+.coach-help{background:#faf9fd}
+.coach-cue{font-weight:600;border-left:3px solid var(--accent);padding-left:12px}
+.coach-log label{font-size:14px}
+.coach-log .fields{grid-template-columns:1fr 1fr}
+.coach-video{margin:14px 0}
+.food-sources{padding:10px 14px;background:var(--lime);border-radius:9px;font-size:14px;margin:12px 0}
+.food-sources p{margin:4px 0}
+@media(max-width:380px){.coach-path span{font-size:11px}.coach-step h1{font-size:26px}.coach-log .fields{grid-template-columns:1fr}}
+
+/* A calm training interface: readable support text and one reachable action. */
+:root{--muted:#626271;--action-bottom:calc(84px + env(safe-area-inset-bottom));--action-clearance:210px}
+html{scroll-padding-bottom:var(--action-clearance)}
+main{padding-bottom:var(--action-clearance)}
+h1,h2,h3{text-wrap:balance}p,li{overflow-wrap:break-word}
+small,.notice,.legend,details summary{font-size:14px;line-height:1.55}
+.eyebrow{font-size:12px;text-transform:none;letter-spacing:.2px}
+.badge{font-size:12px}.status{font-size:12px;min-height:44px;max-width:190px}
+header{gap:14px}.brand{flex-shrink:0}.brand span{font-size:10px}
+.btn.small{font-size:14px}label{font-size:14px}input,select{font-size:16px}
+details summary{min-height:44px;padding:11px 0;display:list-item}
+summary:focus-visible{outline:3px solid #9b77e8;outline-offset:3px}
+nav button{font-size:12px;min-height:52px}nav{padding-top:6px}
+.coach-context{font-size:14px}.coach-path{margin-bottom:14px}.coach-path span{font-size:13px}
+.coach-step h1{font-size:28px;margin-bottom:12px}.coach-step .coach-image{max-height:210px;margin:12px 0 4px}
+.pose-labels{display:flex;justify-content:space-around;gap:12px;font-size:13px;color:var(--muted);margin:4px 0 12px}
+.coach-step .video{margin:8px 0 12px}.coach-step .video .btn{width:100%;min-height:44px}
+.coach-step .video>small{font-size:13px}.coach-step .video details{display:none}
+.coach-primary{position:fixed;left:50%;transform:translateX(-50%);bottom:var(--action-bottom);width:calc(100% - 32px);max-width:712px;margin:0;padding:8px;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 20px #19191f14;z-index:4}
+.coach-primary>.btn{min-height:52px}.coach-rest{font-variant-numeric:tabular-nums}
+.set-feedback{margin:16px 0}.set-feedback legend{font-weight:650;font-size:15px}.set-feedback p{margin:0 0 8px}
+.set-feedback label,.diet-choices label{display:flex;gap:10px;align-items:center;padding:11px 12px;border:1px solid var(--line);border-radius:9px;background:var(--paper);margin:8px 0;min-height:46px;font-weight:500}
+.set-feedback input,.diet-choices input{width:18px;height:18px;min-height:18px;margin:0;flex-shrink:0;accent-color:var(--accent)}
+.set-feedback label:has(input:checked),.diet-choices label:has(input:checked){border-color:var(--accent);background:var(--lime)}
+.diet-choices{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.diet-choices legend{font-weight:650;font-size:14px}
+.diet-choices label{flex:1 1 120px;margin:0;font-size:14px}.meal-timeline{padding-left:0;border-left:0}
+.more-links{display:grid;gap:10px}.more-links .btn{text-align:left}
+.progress-facts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.progress-facts section{padding:12px 0;border-bottom:1px solid var(--line)}
+.progress-facts strong{display:block;font-size:32px;line-height:1.2;font-variant-numeric:tabular-nums}.progress-facts span{font-size:14px;color:var(--muted)}
+.readiness-list{padding:0;list-style:none}.readiness-list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.readiness-list span{display:block;color:var(--accent);font-weight:650}.stage-overview details{margin-top:12px}
+.form-error{background:#fff1eb;border:1px solid #d9a58b;color:#8e3f25;padding:12px;border-radius:9px;font-size:14px}
+.skip-link{position:fixed;left:12px;top:-100px;background:white;padding:12px;z-index:20}.skip-link:focus{top:12px}
+#info-dialog{overscroll-behavior:contain}label:has(input[type=checkbox]){min-height:44px;align-content:center}
+@media(hover:hover){.btn:hover{filter:brightness(.94)}nav button:hover{background:var(--lime)}}
+@media(max-width:380px){main{padding-left:12px;padding-right:12px}.card{padding:16px}.status{max-width:166px;font-size:11px}.coach-path span{font-size:12px}.coach-primary{width:calc(100% - 24px)}.coach-log .fields{grid-template-columns:1fr 1fr}.coach-log .fields>div{min-width:0}.coach-log .fields select{padding:10px 6px;font-size:15px}.diet-choices label{flex-basis:100%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+/* Less navigation chrome during a guided movement; Back stays available. */
+body:has(.coach-step) header{padding:12px 0}
+body:has(.coach-step) .page-links{margin:0 0 8px}
+body:has(.coach-step) .page-links button:not(:first-child){display:none}
+.coach-step[data-coach-phase=set] .coach-image{max-height:160px}
+.coach-step[data-coach-phase=set] .coach-cue{font-size:14px;margin:4px 0 8px}
+.coach-step[data-coach-phase=set] .pose-labels{font-size:12px;margin:2px 0 6px}
+.coach-step[data-coach-phase=set] h2{font-size:18px;margin:10px 0 0}
+.coach-step[data-coach-phase=set] .set-hint{font-size:14px;margin:2px 0 8px}
+.coach-step[data-coach-phase=set] .video>small{font-size:12px}

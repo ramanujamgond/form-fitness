@@ -1,3 +1,4 @@
+import {indianVideos,indianBikeVideo} from './indian-videos.js?v=30';
 export const exercises = {
  assisted:{name:'Assisted pull-up',muscles:'Lats · biceps · upper back',pattern:'pull',reps:'6–10',setup:'Have staff demonstrate the assistance platform and safe entry/exit. More assistance makes the movement easier.',cues:['Choose enough assistance for controlled reps.','Pull without swinging or shrugging.','Lower smoothly; stop with pain or tingling.'],mistake:'Do not treat assistance as ordinary added weight. Less assistance is a progression, only when controlled and symptom-free.',alternative:'Comfortable lat pulldown, after equipment setup.',video:null},
  press:{name:'Machine chest press',muscles:'Chest · triceps · front shoulders',pattern:'push',reps:'8–12',setup:'Adjust the seat so handles meet mid-chest. Keep feet planted and back supported.',cues:['Keep wrists aligned with forearms.','Press smoothly without shrugging.','Return through a comfortable range.'],mistake:'Do not bounce, force a deep stretch, or continue with wrist pain or tingling.',alternative:'A comfortable neutral-grip press, only if symptom-free.',video:null},
@@ -169,4 +170,17 @@ for(const [id,t] of Object.entries(tools)){
  t.imageKind=generated?'generated':'photo';
  if(generated)t.photo={url:`https://i.ytimg.com/vi/${t.youtube}/hqdefault.jpg`,page:`https://www.youtube.com/watch?v=${t.youtube}`,author:t.videoLabel.split(' · ').at(-1),license:'Publisher preview · rights retained by original creator',kind:'video'};
  else t.photo={...t.photo,url:t.image,license:t.photo.license+' · resized/compressed'};
+}
+
+// Primary demonstrations use Indian fitness creators; scope notes identify variations.
+for(const [id,e] of Object.entries(exercises))if(id!=='walk')e.img=`./img/coach/${id}-steps.webp`;
+for(const [id,media] of Object.entries(indianVideos)){
+ const e=exercises[id];Object.assign(e,media,{video:`https://www.youtube.com/watch?v=${media.youtube}`});
+ e.photo={url:`https://i.ytimg.com/vi/${media.youtube}/hqdefault.jpg`,page:e.video,author:media.videoLabel.split(' · ').at(-1),license:'Publisher preview · rights retained by original creator',kind:'video'};
+}
+const indianToolExamples={press:'press',row:'row',pulldown:'pulldown',assisted:'assisted',cablerow:'cablerow',legpress:'legpress',curl:'curl',dumbbells:'raise',cable:'cablerow',bench:'squat',mat:'deadbug',calfstep:'calf',treadmill:'walk',bike:'walk'};
+for(const [id,exercise] of Object.entries(indianToolExamples)){
+ const media=id==='bike'?indianBikeVideo:indianVideos[exercise];Object.assign(tools[id],media);
+ tools[id].videoNote=media.videoNote||'';
+ tools[id].photo={url:`https://i.ytimg.com/vi/${media.youtube}/hqdefault.jpg`,page:`https://www.youtube.com/watch?v=${media.youtube}`,author:media.videoLabel.split(' · ').at(-1),license:'Publisher preview · rights retained by original creator',kind:'video'};
 }
