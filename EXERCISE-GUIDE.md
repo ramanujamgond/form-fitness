@@ -16,7 +16,7 @@ The user confirmed the gym has all standard gym equipment. Programming now assum
 
 Foundation: two working sets per strength movement, generally 8–12 repetitions (raise/curl/bridge 10–15, calf 12–15, dead bug 6–10 each side), 2–3 clean reps in reserve. Rest around 90–120 seconds, longer when needed. Warm up and learn exact safety stops and machine settings with staff. Do not infer comparable weights across different machines or movements.
 
-The app provides equipment status, setup, cues, common mistakes, generated full-color illustrations, original demonstration previews, and named demonstration resources. Alternative buttons open a separate logger; they do not rewrite the calendar or add an automatic substitute. Use a substitute instead of that slot, not extra volume. Equipment preferences stay locally on this device.
+The app provides equipment status, setup, cues, common mistakes, generated full-color illustrations, original demonstration previews, and named demonstration resources. During a guided session, an alternative replaces an unstarted exercise slot and is saved in that session’s plan. After starting a movement, record a stop/skip reason instead of switching through symptoms. The exercise library opens the alternative’s guide. Equipment preferences stay locally on this device.
 
 If no leg-curl station exists, ask staff for a coached knee-flexion replacement; a glute bridge is not an equivalent substitute. If dumbbells and a lateral-raise machine are unavailable, omit that accessory pending review. Push-ups require a stable incline when needed and must not provoke wrist pain. Recurring arm tingling warrants assessment rather than a equipment swap through symptoms.
 
@@ -50,3 +50,7 @@ The default Tuesday and Friday lower-body sessions include two sets of dead bugs
 Source: [NASM core programming guidance](https://www.nasm.org/resource-center/blog/training/core-training-programming).
 
 All 14 demonstrations have checked metadata and image previews. See `resources/media-audit.json` for titles, channels, links and availability on 10 October 2026. Small publisher JPEG previews serve as the original references; generated illustrations are clearly labelled separately. There are no autoplay videos or large GIF downloads.
+
+## Guided session entry
+
+Start today’s session opens the first concrete warm-up movement. Five individually explained movements lead to equipment setup and technique demonstration for the first working exercise. Each working set has its own screen and captures actual reps, load, effort, and technique. Saved sets lead to a rest screen; the next set or exercise opens only after rest and an explicit Continue action. Two cooldown movements precede the final saved-session summary. Warm-up and cooldown movement completions are self-reported. Session step state is retained across reloads and sync.

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "march",
+    "prompt": "Create a photorealistic full-colour educational fitness reference photograph for a beginner gym app in India. Marching on the spot. Left panel lifting left foot with left knee modestly bent, right foot on floor; right panel lifting right foot with right knee modestly bent, left foot on floor. Small easy marching steps and naturally swinging bent arms. Not lunging, kicking or running. Show one adult Indian male trainer, teal athletic T-shirt, charcoal shorts and training shoes, with consistent appearance in each panel. Full body including all fingers and feet visible in every panel, anatomically correct, simple bright uncluttered Indian gym backdrop, realistic skin texture and soft daylight. Distinct side-by-side photo panels, readable on a phone, minimal background, no decorative equipment. No text, no arrows, no diagram, no line art, no stick figures, no vector illustration, no cartoon. These are actual photographic-looking demonstrations, not drawn poses.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/march-v2.png",
+    "asset": "web/img/coach/march.webp",
+    "correction": "Edit this generated photographic image. REMOVE the entire smartphone frame completely. Two clean side-by-side full-body photographic panels, no device, screen, border, or text. Left panel the man is marching with his LEFT foot lifted a little, RIGHT foot flat on ground. Right panel the SAME man has his RIGHT foot lifted a little, LEFT foot flat on ground. Opposite alternating legs, small easy knee lifts. Preserve photorealism, teal T-shirt, charcoal shorts, bright gym."
+  },
+  {
+    "name": "heel",
+    "prompt": "Create a photorealistic full-colour educational fitness reference photograph for a beginner gym app in India. Alternating heel digs/taps warm-up. Left panel standing on right leg with softly bent knee, left heel resting a short distance forward on floor with toes lifted clearly; right panel mirror with right heel forward toes lifted. Full feet visible. No high kicks. Show one adult Indian male trainer, teal athletic T-shirt, charcoal shorts and training shoes, with consistent appearance in each panel. Full body including all fingers and feet visible in every panel, anatomically correct, simple bright uncluttered Indian gym backdrop, realistic skin texture and soft daylight. Distinct side-by-side photo panels, readable on a phone, minimal background, no decorative equipment. No text, no arrows, no diagram, no line art, no stick figures, no vector illustration, no cartoon. These are actual photographic-looking demonstrations, not drawn poses.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/heel.png",
+    "asset": "web/img/coach/heel.webp",
+    "correction": null
+  },
+  {
+    "name": "knee",
+    "prompt": "Create a photorealistic full-colour educational fitness reference photograph for a beginner gym app in India. Gentle alternating knee lifts. Left panel standing on right leg, left knee lifted comfortably toward right hand at waist height; right panel standing on left leg, right knee lifted toward left hand. Straight relaxed torso, no twisting or exaggerated high knee, both feet visible. Show one adult Indian male trainer, teal athletic T-shirt, charcoal shorts and training shoes, with consistent appearance in each panel. Full body including all fingers and feet visible in every panel, anatomically correct, simple bright uncluttered Indian gym backdrop, realistic skin texture and soft daylight. Distinct side-by-side photo panels, readable on a phone, minimal background, no decorative equipment. No text, no arrows, no diagram, no line art, no stick figures, no vector illustration, no cartoon. These are actual photographic-looking demonstrations, not drawn poses.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/knee.png",
+    "asset": "web/img/coach/knee.webp",
+    "correction": null
+  },
+  {
+    "name": "shoulder",
+    "prompt": "Create a photorealistic full-colour educational fitness reference photograph for a beginner gym app in India. Gentle shoulder rolls. Three photo panels show the same man standing tall arms hanging loosely: neutral shoulders; small comfortable upward/backward shoulder roll; shoulders returned down and relaxed. No arm circles, no lifting hands overhead. Relaxed neck and face. Show one adult Indian male trainer, teal athletic T-shirt, charcoal shorts and training shoes, with consistent appearance in each panel. Full body including all fingers and feet visible in every panel, anatomically correct, simple bright uncluttered Indian gym backdrop, realistic skin texture and soft daylight. Distinct side-by-side photo panels, readable on a phone, minimal background, no decorative equipment. No text, no arrows, no diagram, no line art, no stick figures, no vector illustration, no cartoon. These are actual photographic-looking demonstrations, not drawn poses.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/shoulder.png",
+    "asset": "web/img/coach/shoulder.webp",
+    "correction": null
+  },
+  {
+    "name": "bend",
+    "prompt": "Create a photorealistic full-colour educational fitness reference photograph for a beginner gym app in India. Small knee bends warm-up, side view. Left panel upright feet shoulder-width apart arms reaching forward for balance. Right panel lowering hips only about 10 cm, slightly bending hips and knees with feet flat, heels grounded, back neutral. A very shallow bend, NOT a deep squat. Show one adult Indian male trainer, teal athletic T-shirt, charcoal shorts and training shoes, with consistent appearance in each panel. Full body including all fingers and feet visible in every panel, anatomically correct, simple bright uncluttered Indian gym backdrop, realistic skin texture and soft daylight. Distinct side-by-side photo panels, readable on a phone, minimal background, no decorative equipment. No text, no arrows, no diagram, no line art, no stick figures, no vector illustration, no cartoon. These are actual photographic-looking demonstrations, not drawn poses.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/bend.png",
+    "asset": "web/img/coach/bend.webp",
+    "correction": null
+  },
+  {
+    "name": "calf",
+    "prompt": "Create a photorealistic full-colour educational fitness reference photograph for a beginner gym app in India. Supported standing calf stretch, side view facing a plain gym wall. Left panel left leg behind straight, left heel firmly on floor, right knee gently bent in front, both palms on wall, toes of both feet point forward. Right panel mirror other leg back. Natural comfortable stance, no bouncing. Full feet visible. Show one adult Indian male trainer, teal athletic T-shirt, charcoal shorts and training shoes, with consistent appearance in each panel. Full body including all fingers and feet visible in every panel, anatomically correct, simple bright uncluttered Indian gym backdrop, realistic skin texture and soft daylight. Distinct side-by-side photo panels, readable on a phone, minimal background, no decorative equipment. No text, no arrows, no diagram, no line art, no stick figures, no vector illustration, no cartoon. These are actual photographic-looking demonstrations, not drawn poses.",
+    "generator": "Nano Banana MCP · Gemini 3 Pro Image",
+    "source": "resources/coach-media/calf-v2.png",
+    "asset": "web/img/coach/calf.webp",
+    "correction": "Edit this photographic calf stretch reference. Use ONE single full-body SIDE VIEW photo, not a collage. Show palms on a wall, front knee slightly bent, back leg straight and BACK HEEL COMPLETELY FLAT ON THE FLOOR. Both soles visibly contact the floor; absolutely no raised heel or tiptoe stance. Preserve realistic Indian adult man, teal T-shirt, charcoal shorts, gym backdrop. No text, arrows, drawing or devices."
+  }
+]

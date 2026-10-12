@@ -1,4 +1,4 @@
-import {frequencyField,validDate} from './scheduling.js';
+import {validDate} from './scheduling.js?v=30';
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const goals = ['Not sure yet','Get fitter','Build strength','Lose fat','Build core strength'];
 export const experiences = ['New to the gym','Some experience','Regular training'];
@@ -16,6 +16,10 @@ export function preferencesFrom(records) {
  profile.workoutDays=Number.isInteger(p.workoutDays)&&p.workoutDays>=1&&p.workoutDays<=7?p.workoutDays:5;
  profile.planHistory=Array.isArray(p.planHistory)?p.planHistory.filter(r=>r&&validDate(r.effectiveFrom)&&Number.isInteger(r.days)&&r.days>=1&&r.days<=7).slice(-365):[];
  profile.pelvic=p.pelvic===true;profile.onboardingDone=p.onboardingDone===true;
+ profile.guideVersion=p.guideVersion===22?22:null;
+ profile.diet=['any','vegetarian','vegan'].includes(p.diet)?p.diet:null;
+ profile.avoid=typeof p.avoid==='string'?p.avoid.slice(0,120):'';
+ profile.mealChoices=Object.fromEntries(Object.entries(p.mealChoices||{}).filter(([key,value])=>/^\d{4}-\d{2}-\d{2}:(breakfast|lunch|snack|dinner)$/.test(key)&&Number.isInteger(value)&&value>=0&&value<10).slice(-365));
  const equipment={};for(const [id,value] of Object.entries(row?.data?.equipment||{}))if(['yes','no','unknown'].includes(value))equipment[id]=value;
  return {profile,equipment};
 }
@@ -32,6 +36,6 @@ export function accountPanel({auth,cloudReady,emailReady,mode,message,resetToken
 }
 function recoveryForm(){return '<form data-form="forgotpin"><label>Account email</label><input name="email" type="email" autocomplete="email" required><p><button class="btn">Send reset link</button></p></form><small>The link expires in 15 minutes. Setting a new PIN signs out other sessions. Wait 60 seconds before requesting another link.</small>';}
 function backToLogin(){return '<p><button class="btn secondary" data-action="authmode:signin">Back to sign in</button></p>';}
-export function onboarding(profile) {
- return `<section class="card" id="onboarding"><div class="eyebrow">Make it yours · optional</div><h2>Start at your own pace</h2><p>You don’t need to know machine names. Your plan starts with beginner guidance.</p><form data-form="onboarding">${frequencyField(profile)}<label>What would you like to work on?</label><select name="goal">${goals.map(x=>`<option ${profile.goal===x?'selected':''}>${x}</option>`).join('')}</select><label>Gym experience</label><select name="experience">${experiences.map(x=>`<option ${profile.experience===x?'selected':''}>${x}</option>`).join('')}</select><small>New to the gym is the default. Experience does not automatically increase your training stage.</small><div class="fields"><div><label>Weight in kg (optional)</label><input name="weight" type="number" min="25" max="400" step="0.1" value="${esc(profile.weight)}"></div><div><label>Height in cm (optional)</label><input name="height" type="number" min="100" max="250" value="${esc(profile.height)}"></div></div><p>Equipment stays “I don’t know yet.” Pictures and setup guides will help you check it when you visit the gym.</p><p><button class="btn">Save & continue</button> <button type="button" class="btn secondary" data-action="skiponboarding">Skip for now</button></p></form></section>`;
+export function onboarding() {
+ return `<section class="card beginner-guide" id="onboarding"><div class="eyebrow">Start here · Beginner guide</div><h1>Your first step, explained.</h1><p>No training experience needed. We’ll guide you through a beginner plan, one action at a time.</p><ol class="journey"><li><h3>Learn the basics</h3><p>A rep is one movement. A set is a group of reps. Start light enough to finish with 2–3 more clean reps possible.</p></li><li><h3>Follow your workout</h3><p>Warm up, watch the demonstration, then record each set’s reps and weight. Rest before the next set. Ask gym staff to check unfamiliar equipment.</p></li><li><h3>Fuel and recover</h3><p>Your day includes meal suggestions and recovery. Times and portions are starting points you can adjust.</p></li><li><h3>Build confidence</h3><p>Your stage grows with recorded technique, effort and recovery. Missed days do not create extra workouts.</p></li></ol><p>If a movement causes pain or tingling, stop it and record why.</p><button class="btn" data-action="begin">I’m ready · Show my day →</button></section>`;
 }
