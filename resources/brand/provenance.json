@@ -1,0 +1,9 @@
+{
+  "generator": "Nano Banana MCP",
+  "model": "Gemini 3.1 Flash Image",
+  "model_tier": "nb2",
+  "resolution": "1k",
+  "prompt": "Create a final minimal modern abstract app icon for a personal movement and training journal. Absolutely NO letters, NO F, NO typography, NO monogram. One compact bold abstract symbol made from TWO smooth interlocking crescent-like curved ribbons that suggest a flowing loop, daily rhythm, balance and forward movement. Think a restrained premium contemporary software identity: beautifully balanced negative space, two broad smooth curved forms turning around a shared empty center, slightly asymmetrical so the symbol feels active. Not a yin-yang icon, not a chain link, not a recycling symbol, no arrowheads. One ribbon warm white #FAF9F6, the other pale lavender #D7C9FF. Solid flat violet #7041D8 background completely edge-to-edge, square 1:1 image, no rounded-square container. All visible artwork must be solid flat uniform color with crisp vector-like boundaries. No gradients, NO texture, shadows, highlights, 3D, outlines, fine detail, fitness equipment, dumbbells, people, lightning, flames, words, or mockups. The complete compact symbol occupies about 52% canvas width and height and fits entirely inside the central 64% square, optically centered for circular Android app masking. Attractive as a small 24px symbol, confident and uncluttered. Deliver exactly ONE polished square app icon, no variations or presentation board.",
+  "master": "form-logo-flow-master.png",
+  "exports": "build-icons.py"
+}

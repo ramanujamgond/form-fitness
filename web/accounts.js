@@ -1,4 +1,4 @@
-import {validDate} from './scheduling.js?v=30';
+import {validDate} from './scheduling.js?v=34';
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const goals = ['Not sure yet','Get fitter','Build strength','Lose fat','Build core strength'];
 export const experiences = ['New to the gym','Some experience','Regular training'];

@@ -1,6 +1,6 @@
-import {weightText} from './prescription.js?v=30';
-import {warmups,cooldown,warmupSource,warmupVideoLabel} from './coach.js?v=30';
-import {exercises,tools} from './content.js?v=30';
+import {weightText} from './prescription.js?v=34';
+import {warmups,cooldown,warmupSource,warmupVideoLabel} from './coach.js?v=34';
+import {exercises,tools} from './content.js?v=34';
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image=(src,alt)=>`<img class="coach-image" src="${src}" alt="${esc(alt)}" width="600" height="350">`;
 const compactOptions=(items,current,label=x=>x,step=1)=>{const nearby=typeof current==='number'?items.filter(x=>typeof x==='number'&&(x-current)%step===0).sort((a,b)=>Math.abs(a-current)-Math.abs(b-current)).slice(0,3).sort((a,b)=>a-b):[];const shortlist=[...new Set([current,...items.filter(x=>typeof x==='string'),...nearby])];return `<select data-choice-options="${esc(JSON.stringify(items.map(x=>({value:String(x),label:label(x)}))))}" data-choice-current="${esc(current)}">${shortlist.map(x=>`<option value="${esc(x)}" ${x===current?'selected':''}>${esc(label(x))}</option>`).join('')}<option value="more">More options…</option></select>`;};

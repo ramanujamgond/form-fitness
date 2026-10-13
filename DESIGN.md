@@ -45,3 +45,9 @@ Spacing follows a 4 px base with practical 14 px card gaps. Mobile page padding 
 Design around 390 px wide phones; fit narrow screens without horizontal page scrolling. Tables can scroll within their own container. Keep text zoom and keyboard focus usable. Honor reduced-motion preferences. Do not introduce autoplay video, flashing alerts or hover-only instructions. All essential UI assets remain available offline.
 
 Implementation: `web/style.css` contains the tokens and components; `web/app.js` supplies the week strip and navigation icons. The service-worker cache version must change after visual updates.
+
+## FORM identity
+
+The app identity is an abstract flowing loop formed by two broad curved ribbons, one warm white and one pale lavender, on a flat violet square. The loop represents daily rhythm, movement and consistency without a letter or equipment motif. Large shapes and open negative space retain legibility at favicon sizes. Nano Banana 2 generated the master in `resources/brand/form-logo-flow-master.png`; `build-icons.py` exports the same artwork without redrawing it. The app header pairs a decorative 32 px symbol with the readable FORM wordmark.
+
+The manifest supplies ordinary 192/512 px icons and a dedicated full-bleed 512 px maskable icon. The symbol remains within Android’s central safe circle, allowing Samsung launchers to apply their own icon shape. Safari uses a 180 px Apple touch icon; browser tabs use 32 px PNG and multi-size ICO exports. All deployed brand assets are local and cached offline. The full-resolution master and provenance stay outside the deployable directory.

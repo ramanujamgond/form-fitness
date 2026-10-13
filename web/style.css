@@ -98,3 +98,6 @@ body:has(.coach-step) .page-links button:not(:first-child){display:none}
 .coach-step[data-coach-phase=set] h2{font-size:18px;margin:10px 0 0}
 .coach-step[data-coach-phase=set] .set-hint{font-size:14px;margin:2px 0 8px}
 .coach-step[data-coach-phase=set] .video>small{font-size:12px}
+
+/* The same brand mark appears in the app and on the home screen. */
+.brand{display:flex;align-items:center;gap:9px;min-width:0}.brand img{width:32px;height:32px;flex:none;border-radius:8px}.brand>div{min-width:0}.brand span{max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
