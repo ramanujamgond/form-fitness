@@ -1,4 +1,4 @@
-# FORM — flat minimal design guide
+# Stride — flat minimal design guide
 
 Reference direction: `designImg/image copy 2.png`, `image copy 3.png`, and `image copy 4.png`. Copies 2–3 inform the white surfaces, purple interaction color, quiet borders, simple lists and selected calendar dates. Copy 4 informs the compact training hierarchy, seven-day strip, set tables and concise progress summaries. These references guide visual language; their marketplace, chat, payment and business features are not added to this personal training app.
 
@@ -46,8 +46,10 @@ Design around 390 px wide phones; fit narrow screens without horizontal page scr
 
 Implementation: `web/style.css` contains the tokens and components; `web/app.js` supplies the week strip and navigation icons. The service-worker cache version must change after visual updates.
 
-## FORM identity
+## Stride identity
 
-The app identity is an abstract flowing loop formed by two broad curved ribbons, one warm white and one pale lavender, on a flat violet square. The loop represents daily rhythm, movement and consistency without a letter or equipment motif. Large shapes and open negative space retain legibility at favicon sizes. Nano Banana 2 generated the master in `resources/brand/form-logo-flow-master.png`; `build-icons.py` exports the same artwork without redrawing it. The app header pairs a decorative 32 px symbol with the readable FORM wordmark.
+The app identity is an abstract flowing loop formed by two broad curved ribbons, one warm white and one pale lavender, on a flat violet square. The loop represents daily rhythm, movement and consistency without a letter or equipment motif. Large shapes and open negative space retain legibility at favicon sizes. Nano Banana 2 generated the master in `resources/brand/form-logo-flow-master.png`; `build-icons.py` exports the same artwork without redrawing it. The app header pairs a decorative 32 px symbol with the readable Stride wordmark.
 
 The manifest supplies ordinary 192/512 px icons and a dedicated full-bleed 512 px maskable icon. The symbol remains within Android’s central safe circle, allowing Samsung launchers to apply their own icon shape. Safari uses a 180 px Apple touch icon; browser tabs use 32 px PNG and multi-size ICO exports. All deployed brand assets are local and cached offline. The full-resolution master and provenance stay outside the deployable directory.
+
+The name Stride reflects steady progress through training, recovery and daily habits. The abstract loop remains the visual identity; the app name appears as STRIDE in the header and Stride in browser and installation metadata.

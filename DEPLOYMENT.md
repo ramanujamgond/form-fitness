@@ -22,7 +22,7 @@ Use the existing ignored `.env`, or copy `.env.example` if no `.env` exists. It 
 | `SMTP_PORT` | `587` (STARTTLS), or `465` (TLS) | Same port | No |
 | `SMTP_USER` | Gmail address used for sending | Same address | Account configuration |
 | `SMTP_PASS` | Gmail App Password | Same App Password | Yes |
-| `EMAIL_FROM` | `FORM Fitness <your-app-email@gmail.com>` | Same sender | No |
+| `EMAIL_FROM` | `Stride Fitness <your-app-email@gmail.com>` | Same sender | No |
 
 A secret has already been generated in the local `.env` during this implementation. If creating another environment, generate one with `openssl rand -base64 48`. Do not overwrite a configured `.env` or commit it. Keep these values out of `web/`. Environment values have no `VITE_`, `NEXT_PUBLIC_`, or other client-exposure prefix.
 
@@ -30,8 +30,8 @@ A secret has already been generated in the local `.env` during this implementati
 
 Better Auth handles accounts, sessions, verification and PIN recovery. Nodemailer delivers the links over Gmail SMTP. A purchased domain is not needed for this personal setup. Signup and recovery remain unavailable until all SMTP variables are configured.
 
-1. Use a dedicated Gmail account for the app. Enable [2-Step Verification](https://myaccount.google.com/security), then generate an [App Password](https://myaccount.google.com/apppasswords) named FORM Fitness. App Passwords are unavailable for some protected or managed accounts; see [Google's instructions](https://support.google.com/accounts/answer/185833).
-2. Set `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`, `SMTP_USER` to that Gmail address, and `SMTP_PASS` to the generated App Password without spaces in the ignored local `.env`. Set `EMAIL_FROM="FORM Fitness <that-same-address@gmail.com>"`. Do not paste the password in chat or commit it. Use the App Password rather than your normal Google password.
+1. Use a dedicated Gmail account for the app. Enable [2-Step Verification](https://myaccount.google.com/security), then generate an [App Password](https://myaccount.google.com/apppasswords) named Stride Fitness. App Passwords are unavailable for some protected or managed accounts; see [Google's instructions](https://support.google.com/accounts/answer/185833).
+2. Set `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=587`, `SMTP_USER` to that Gmail address, and `SMTP_PASS` to the generated App Password without spaces in the ignored local `.env`. Set `EMAIL_FROM="Stride Fitness <that-same-address@gmail.com>"`. Do not paste the password in chat or commit it. Use the App Password rather than your normal Google password.
 3. Restart the local dev server after changing `.env`. Add those five variables to Vercel Production environment variables and redeploy when production is ready. Gmail's App Password is a server secret; no GitHub secret is needed for Vercel's Git deployment.
 
 Port 587 requires STARTTLS; port 465 uses immediate TLS. Certificate validation stays enabled. Email requests have bounded connection/socket timeouts. Gmail can block a new server login, and has [sending limits](https://support.google.com/mail/answer/22839). The app's configuration flag checks variables, not successful authentication or inbox delivery. Test real delivery from Vercel after deployment. Account links run through Better Auth's background-task handler, using Vercel `waitUntil`.
@@ -102,7 +102,7 @@ npm test
 npm run build
 ```
 
-`tests/workout-browser.cjs` checks the mobile workout/offline flow using Playwright and Chrome. `FORM_TEST_URL=http://localhost:3000 node tests/workout-browser.cjs` uses the Node dev server.
+`tests/workout-browser.cjs` checks the mobile workout/offline flow using Playwright and Chrome. `Stride_TEST_URL=http://localhost:3000 node tests/workout-browser.cjs` uses the Node dev server.
 
 `tests/cloud-server.mjs` and `tests/cloud-browser.cjs` are developer integration tests using a disposable PostgreSQL instance at `127.0.0.1:55432`, test owner `owner@example.com` and simulated SMTP transport. The harness refuses remote database connections and never sends real email. The test creates two accounts and exercises verification, PIN hashing, journal isolation, cross-device preferences, reset/session revocation, throttling and offline sign-out. Never point these tests at the real Neon journal.
 

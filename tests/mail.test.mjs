@@ -7,12 +7,12 @@ test('PIN accepts 6–12 digits only, including leading zeroes',()=>{
  for(const value of ['012345','123456789012'])assert.ok(validPin(value));
  for(const value of ['12345','1234567890123','abcdef','123 456',123456])assert.equal(validPin(value),false);
 });
-const smtpEnv={SMTP_HOST:'smtp.gmail.com',SMTP_PORT:'587',SMTP_USER:'sender@gmail.com',SMTP_PASS:'test-app-password',EMAIL_FROM:'FORM <sender@gmail.com>'};
+const smtpEnv={SMTP_HOST:'smtp.gmail.com',SMTP_PORT:'587',SMTP_USER:'sender@gmail.com',SMTP_PASS:'test-app-password',EMAIL_FROM:'Stride <sender@gmail.com>'};
 test('SMTP sends reset links using STARTTLS without exposing the credential in mail',async()=>{
  let options,message,closed=false;
  await sendAccountEmail({to:'sister@example.com',kind:'reset',url:'https://form.example.com/reset'},{env:smtpEnv,createTransport:value=>{options=value;return {sendMail:async value=>{message=value;return {accepted:value.to,rejected:[]};},close(){closed=true;}};}});
  assert.equal(options.host,'smtp.gmail.com');assert.equal(options.port,587);assert.equal(options.secure,false);assert.equal(options.requireTLS,true);assert.equal(options.auth.pass,smtpEnv.SMTP_PASS);
- assert.equal(message.to[0],'sister@example.com');assert.match(message.text,/15 minutes/);assert.match(message.subject,/PIN/);assert.ok(!JSON.stringify(message).includes(smtpEnv.SMTP_PASS));assert.ok(closed);
+ assert.equal(message.to[0],'sister@example.com');assert.match(message.text,/15 minutes/);assert.equal(message.subject,'Reset your Stride PIN');assert.ok(!JSON.stringify(message).includes(smtpEnv.SMTP_PASS));assert.ok(closed);
 });
 test('port 465 uses immediate TLS and unsupported ports fail configuration',()=>{
  let options;emailTransport({...smtpEnv,SMTP_PORT:'465'},value=>{options=value;return {};});assert.equal(options.secure,true);assert.equal(options.requireTLS,true);

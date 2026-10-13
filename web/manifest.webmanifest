@@ -1,6 +1,6 @@
 {
-  "name": "FORM Training Journal",
-  "short_name": "FORM",
+  "name": "Stride Training Journal",
+  "short_name": "Stride",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

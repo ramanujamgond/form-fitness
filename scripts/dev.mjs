@@ -22,4 +22,4 @@ export async function appHandler(req, res) {
     res.end(body);
   } catch { res.statusCode = 404; res.end('Not found'); }
 }
-if(process.argv[1]&&resolve(process.argv[1])===resolve('scripts/dev.mjs'))createServer(appHandler).listen(3000,'127.0.0.1',()=>console.log('FORM: http://localhost:3000 (offline app works before cloud setup)'));
+if(process.argv[1]&&resolve(process.argv[1])===resolve('scripts/dev.mjs'))createServer(appHandler).listen(3000,'127.0.0.1',()=>console.log('Stride: http://localhost:3000 (offline app works before cloud setup)'));
