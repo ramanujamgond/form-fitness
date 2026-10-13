@@ -1,6 +1,6 @@
-import {weightText} from './prescription.js?v=35';
-import {warmups,cooldown,warmupSource,warmupVideoLabel} from './coach.js?v=35';
-import {exercises,tools} from './content.js?v=35';
+import {weightText} from './prescription.js?v=36';
+import {warmups,cooldown,warmupSource,warmupVideoLabel} from './coach.js?v=36';
+import {exercises,tools} from './content.js?v=36';
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image=(src,alt)=>`<img class="coach-image" src="${src}" alt="${esc(alt)}" width="600" height="350">`;
 const compactOptions=(items,current,label=x=>x,step=1)=>{const nearby=typeof current==='number'?items.filter(x=>typeof x==='number'&&(x-current)%step===0).sort((a,b)=>Math.abs(a-current)-Math.abs(b-current)).slice(0,3).sort((a,b)=>a-b):[];const shortlist=[...new Set([current,...items.filter(x=>typeof x==='string'),...nearby])];return `<select data-choice-options="${esc(JSON.stringify(items.map(x=>({value:String(x),label:label(x)}))))}" data-choice-current="${esc(current)}">${shortlist.map(x=>`<option value="${esc(x)}" ${x===current?'selected':''}>${esc(label(x))}</option>`).join('')}<option value="more">More options…</option></select>`;};
@@ -27,7 +27,7 @@ export function renderCoach(c){
  }else if(state.phase==='stop'){
   body=`<section class="card coach-step" data-coach-phase="stop"><div class="eyebrow">Pause this movement</div><h1>Stop ${e.name.toLowerCase()}</h1><p>You recorded pain or tingling. Put the weight down safely and do not continue this movement.</p><p>Only move on if another activity is comfortable and appropriate. You can stop the whole session below.</p><div class="coach-primary">${button('Record this stop · Continue safely','symptomstop')}</div></section>`;
  }else if(state.phase==='review'){
-  body=`<section class="card coach-step" data-coach-phase="review"><div class="eyebrow">Warm-up, exercises and cooldown recorded</div><h1>You’ve reached the finish</h1><p>Review what you recorded, then save your completed session.</p>${reviewHTML}<div class="coach-primary">${button('Save my completed workout','complete')}</div></section>`;
+  body=`<section class="card coach-step" data-coach-phase="review"><div class="eyebrow">Warm-up, exercises and cooldown recorded</div><h1>You’ve reached the finish</h1><p>Review what you recorded, then save your completed session.</p>${reviewHTML}<div class="coach-primary">${button('Finish session & save workout','complete')}</div></section>`;
  }else if(state.phase==='complete'){
   body=`<section class="card coach-step" data-coach-phase="complete"><div class="eyebrow">Workout saved</div><h1>You’re done for today</h1><p>Your sets and any skipped movements are saved. Give yourself time to recover.</p>${reviewHTML}<div class="coach-primary">${button('Next · My Bhubaneswar food plan','food')}</div></section>`;
  }
