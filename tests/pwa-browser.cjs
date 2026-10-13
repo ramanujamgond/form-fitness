@@ -19,12 +19,14 @@ const assert=require('node:assert/strict');
   event.prompt=async()=>{window.installCalls=(window.installCalls||0)+1;};
   event.userChoice=Promise.resolve({outcome:'dismissed'});window.dispatchEvent(event);
  });
- assert.equal(await page.locator('[data-action="install"]').innerText(),'Install FORM');
+ assert.equal(await page.locator('[data-action="install"]').innerText(),'Install Stride');
  await page.locator('[data-action="install"]').click();
  assert.equal(await page.evaluate(()=>window.installCalls),1);
  assert.equal(await page.locator('[data-action="install"]').innerText(),'How to install');
  const manifest=await (await context.request.get(origin+'/manifest.webmanifest')).json();
  assert.equal(manifest.display,'standalone');
+ assert.equal(manifest.name,'Stride Training Journal');assert.equal(manifest.short_name,'Stride');
+ assert.match(await page.title(),/Stride/);assert.match(await page.locator('.brand').innerText(),/STRIDE/);
  for(const icon of manifest.icons){const response=await context.request.get(origin+'/'+icon.src);assert.equal(response.ok(),true);assert.match(response.headers()['content-type'],/image\/png/);const bytes=await response.body();assert.equal(bytes.readUInt32BE(16),Number(icon.sizes.split('x')[0]));assert.equal(bytes.readUInt32BE(20),Number(icon.sizes.split('x')[1]));}
  assert.equal(await page.locator('link[rel="apple-touch-icon"]').getAttribute('href'),'./form-apple-touch-180.png');
  assert.equal(manifest.icons.some(icon=>icon.purpose==='maskable'),true);
