@@ -15,7 +15,7 @@ export function emailTransport(env = process.env, createTransport = nodemailer.c
 export async function sendAccountEmail({ to, url, kind }, { env = process.env, createTransport = nodemailer.createTransport } = {}) {
   const transport = emailTransport(env, createTransport);
   const reset = kind === 'reset';
-  const subject = reset ? 'Reset your FORM PIN' : 'Verify your FORM email';
+  const subject = reset ? 'Reset your Stride PIN' : 'Verify your Stride email';
   const text = `${reset ? 'Choose a new PIN' : 'Verify your email to sign in'} using this link:\n\n${url}\n\nThis link expires in ${reset ? '15 minutes' : '1 hour'}. If you did not request it, ignore this email.`;
   try {
     const result = await transport.sendMail({ from: env.EMAIL_FROM, to: [to], subject, text });
