@@ -101,3 +101,7 @@ body:has(.coach-step) .page-links button:not(:first-child){display:none}
 
 /* The same brand mark appears in the app and on the home screen. */
 .brand{display:flex;align-items:center;gap:9px;min-width:0}.brand img{width:32px;height:32px;flex:none;border-radius:8px}.brand>div{min-width:0}.brand span{max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.session-clock{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;margin:0 0 18px;border:1px solid var(--line);border-radius:12px;background:var(--paper)}.session-clock span,.session-clock small{display:block}.session-clock span{font-size:12px;color:var(--muted)}.session-clock strong{display:block;font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:.5px}.session-clock small{font-size:11px;color:var(--muted)}.session-clock .btn{flex:none}.session-history .row{flex-wrap:wrap;gap:6px}.session-history strong{font-variant-numeric:tabular-nums}
+
+.session-clock>div{min-width:0;flex:1}

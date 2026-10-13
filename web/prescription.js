@@ -1,4 +1,4 @@
-import {setGoal} from './journey.js?v=35';
+import {setGoal} from './journey.js?v=36';
 // Suggestions are starting trials, not an assessment of a person's strength.
 export function prescription(id,stage,rows=[],date='',session={}) {
  const bodyweight=['pushup','squat','bridge','calf','deadbug'].includes(id);
