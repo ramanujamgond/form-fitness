@@ -1,6 +1,6 @@
-import {validDate,validBreak} from './dates.js?v=30';
-export {validDate,validBreak} from './dates.js?v=30';
-import {week} from './content.js?v=30';
+import {validDate,validBreak} from './dates.js?v=34';
+export {validDate,validBreak} from './dates.js?v=34';
+import {week} from './content.js?v=34';
 const rest=()=>({...week[0],ids:[]});
 const fullA={name:'Full body A + core',kind:'Strength',ids:['press','row','legpress','bridge','deadbug']};
 const fullB={name:'Full body B + core',kind:'Strength',ids:['press','pulldown','squat','curl','deadbug']};

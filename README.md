@@ -27,7 +27,7 @@ Deletions are tombstones. Conflicts use the latest record timestamp, rather than
 
 GitHub Actions runs tests/build on pushes and pull requests and publishes `form-offline-web` as a downloadable static artifact. Vercel deploys from GitHub using `vercel.json`. No GitHub secrets are required for this route; add server variables to the Vercel project. The Pages workflow is an optional offline-only deployment of `web/`; it cannot host signup, email recovery or the sync API. It skips deployment unless the repository Actions variable `ENABLE_GITHUB_PAGES` is set to `true`. See [DEPLOYMENT.md](DEPLOYMENT.md) for setup before enabling it.
 
-On Android Chrome, open the HTTPS Vercel URL, let resources load, then choose menu → Add to home screen / Install. A plain HTTP LAN address will not enable offline installation. Videos remain online-only.
+Open the public HTTPS URL directly in Chrome on Android or Safari on iPhone, rather than inside another app’s browser. Under More, the home-screen card offers Install FORM when the browser provides an install prompt, or How to install with device-specific instructions. Android: Chrome menu → Add to home screen / Install app. iPhone: Safari → Share → Add to Home Screen → Open as Web App (if offered) → Add; use Edit Actions if Add to Home Screen is missing. A plain HTTP LAN address will not enable PWA installation or offline caching. Let the app finish loading before testing offline. Videos remain online-only.
 
 ## What is included
 

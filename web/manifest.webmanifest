@@ -8,16 +8,24 @@
   "theme_color": "#7041d8",
   "icons": [
     {
-      "src": "./icon-192.png",
+      "src": "./form-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "./icon-512.png",
+      "src": "./form-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "./form-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
-  ]
+  ],
+  "id": "./",
+  "description": "Your personal training journal, with offline workout and meal logging."
 }
