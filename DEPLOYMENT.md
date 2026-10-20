@@ -52,6 +52,16 @@ Open `http://localhost:3000`, go to **Settings → Create account**, enter name,
 
 PINs use Better Auth's salted hash. Account throttling allows five attempts per fifteen-minute window, with additional database-backed request limits. Verification links expire after one hour; reset links expire after fifteen minutes and can only be used once. Resetting a PIN revokes that account's existing sessions. An existing password account can switch to a numeric PIN using **Forgot PIN**; there is no need to delete its journal. Changing `AUTH_ALLOWED_EMAIL` changes who may claim the original local data, so retain the original email.
 
+## Google login (optional)
+
+Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` as server-only variables in the ignored local `.env` and Vercel **Production**, then deploy the login change. No database migration is needed: Google uses the existing Better Auth account tables. `/api/config` exposes only a `googleReady` boolean; the button stays hidden until both credentials and the core server configuration are present. Preview deployments must keep production credentials unset.
+
+In Google Auth Platform, create a **Web application** client. For the current production site, use `https://form-fitness-three.vercel.app` as the JavaScript origin and `https://form-fitness-three.vercel.app/api/auth/callback/google` as the redirect URI. For local OAuth testing, separately add `http://localhost:3000` and `http://localhost:3000/api/auth/callback/google`. Request only the default identity scopes (`openid`, email, profile). While the consent screen is in Testing, add permitted Gmail addresses under Audience → Test users; configure the production audience before opening access to everyone.
+
+**Continue with Google** uses Better Auth's authorization-code flow with state and PKCE. A Google-verified email matching a verified existing account links to the same user ID, so journal records and the original email/PIN login remain available. An unverified existing email account must complete its email verification first; linking never accepts an unverified provider email or a different email address. An unfamiliar verified email creates a new account with a separate journal and the existing beginner welcome flow. Returning users restore their saved welcome status after cloud sync. Google-only users can use **Reset PIN by email** to add a PIN when email delivery is configured.
+
+`tests/google-auth.test.mjs` exercises the real Better Auth OAuth callback with signed test tokens, mocked Google endpoints and an isolated memory database. It checks account linking, PIN preservation, new-account separation, unverified-email rejection and state validation without real Google credentials or production records. `tests/google-browser.cjs` checks redirects, cancellation, retry, onboarding and cloud preference restoration. A real Google account sign-in still requires a human to finish Google's account chooser and consent screen.
+
 ## 3. Connect GitHub to Vercel
 
 In your existing [Vercel account](https://vercel.com/new), import `ramanujamgond/form-fitness`. The Neon changes must first be pushed to the branch you intend to deploy.

@@ -1,5 +1,5 @@
-import {localMealOptions} from './local-food.js?v=38';
-import {recommendedSets} from './training.js?v=38';
+import {localMealOptions} from './local-food.js?v=39';
+import {recommendedSets} from './training.js?v=39';
 // Journey state is derived from journal records so it survives reloads and sync.
 export const stages=['Foundation','Building','Intermediate','Advanced'];
 export function setGoal(id,stage='Foundation') {

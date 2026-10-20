@@ -1,0 +1,45 @@
+const {chromium}=require('/Users/string1301/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const assert=require('node:assert/strict');
+(async()=>{
+ const browser=await chromium.launch({headless:true,channel:'chrome'});
+ try{
+  const context=await browser.newContext({serviceWorkers:'block',viewport:{width:390,height:844}}),page=await context.newPage();
+  const errors=[];page.on('pageerror',err=>errors.push(err.message));
+  const origin=process.env.FORM_TEST_URL||'http://localhost:3000';
+  let session=null,googleReady=true,failSocial=true,request;
+  let records=[];
+  await page.route('**/api/config',r=>r.fulfill({json:{configured:true,emailReady:true,googleReady}}));
+  await page.route('**/api/account',r=>r.fulfill({json:session}));
+  await page.route('**/api/journal',r=>r.fulfill({json:{records}}));
+  await page.route('**/api/auth/sign-in/social',r=>{request=r.request().postDataJSON();return r.fulfill(failSocial?{status:503,json:{message:'Google temporarily unavailable'}}:{json:{url:'https://accounts.google.com/o/oauth2/v2/auth?state=test',redirect:false}});});
+  await page.goto(origin+'/');await page.waitForSelector('[data-action="googlelogin"]');
+  await page.locator('[data-action="googlelogin"]').click();
+  await page.getByRole('status').filter({hasText:'Google temporarily unavailable'}).waitFor();
+  assert.equal(await page.locator('[data-action="googlelogin"]').isEnabled(),true);
+  assert.equal(await page.locator('[data-form="account"]').count(),1,'PIN login stays available on Google failures');
+  assert.equal(request.provider,'google');assert.equal(request.disableRedirect,true);
+  assert.equal(request.errorCallbackURL,origin+'/?flow=google#settings');
+  await page.goto(origin+'/?flow=google&error=access_denied#settings');
+  await page.getByRole('status').filter({hasText:'Google sign-in did not finish'}).waitFor();
+  assert.equal(new URL(page.url()).search,'','Clear OAuth callback parameters');
+  failSocial=false;
+  await page.route('https://accounts.google.com/**',r=>r.fulfill({body:'Mock Google account chooser'}));
+  await page.locator('[data-action="googlelogin"]').click();
+  await page.waitForURL('https://accounts.google.com/**');
+  session={user:{id:'google-new-user',name:'New Google user',email:'new@example.com'},canClaimLegacy:false};
+  await page.goto(origin+'/');await page.waitForSelector('#onboarding');
+  assert.equal(await page.locator('[data-form="account"]').count(),0);
+  assert.equal(await page.evaluate(()=>localStorage.getItem('form-local-scope')),'account-google-new-user');
+  session={user:{id:'existing-pin-user',name:'Existing user',email:'existing@example.com'},canClaimLegacy:false};
+  records=[{id:'preferences',type:'preferences',date:'2026-10-20',updatedAt:new Date().toISOString(),deleted:false,data:{profile:{onboardingDone:true,guideVersion:22,weight:75},equipment:{}}}];
+  await page.goto(origin+'/');await page.waitForSelector('#onboarding',{state:'detached'});
+  await page.waitForSelector('nav');
+  assert.equal(await page.evaluate(()=>localStorage.getItem('form-local-scope')),'account-existing-pin-user');
+  assert.equal(await page.locator('#onboarding').count(),0,'Returning users restore cloud onboarding preferences');
+  session=null;googleReady=false;records=[];
+  await page.goto(origin+'/');await page.waitForSelector('[data-form="account"]');
+  assert.equal(await page.locator('[data-action="googlelogin"]').count(),0,'Unconfigured Google provider stays hidden');
+  assert.deepEqual(errors,[]);
+  console.log('PASS: Google login request, redirect, cancellation, failure recovery, new-user onboarding and returning-user restoration');
+ }finally{await browser.close();}
+})().catch(err=>{console.error(err);process.exitCode=1;});
