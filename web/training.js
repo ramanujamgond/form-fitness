@@ -1,4 +1,4 @@
-import {validDate} from './dates.js?v=39';
+import {validDate} from './dates.js?v=40';
 
 export const trainingStages=[
  {id:'Foundation',name:'Beginner',focus:'Learn the machines. Finish with 2–3 good reps left.',change:'Two working sets. Repeat comfortable loads while learning.'},
