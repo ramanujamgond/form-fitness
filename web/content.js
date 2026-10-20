@@ -1,4 +1,4 @@
-import {indianVideos,indianBikeVideo} from './indian-videos.js?v=36';
+import {indianVideos,indianBikeVideo} from './indian-videos.js?v=38';
 export const exercises = {
  assisted:{name:'Assisted pull-up',muscles:'Lats · biceps · upper back',pattern:'pull',reps:'6–10',setup:'Have staff demonstrate the assistance platform and safe entry/exit. More assistance makes the movement easier.',cues:['Choose enough assistance for controlled reps.','Pull without swinging or shrugging.','Lower smoothly; stop with pain or tingling.'],mistake:'Do not treat assistance as ordinary added weight. Less assistance is a progression, only when controlled and symptom-free.',alternative:'Comfortable lat pulldown, after equipment setup.',video:null},
  press:{name:'Machine chest press',muscles:'Chest · triceps · front shoulders',pattern:'push',reps:'8–12',setup:'Adjust the seat so handles meet mid-chest. Keep feet planted and back supported.',cues:['Keep wrists aligned with forearms.','Press smoothly without shrugging.','Return through a comfortable range.'],mistake:'Do not bounce, force a deep stretch, or continue with wrist pain or tingling.',alternative:'A comfortable neutral-grip press, only if symptom-free.',video:null},
@@ -73,10 +73,10 @@ exercises.deadbug.alternative='Reduce reach or use heel slides if trunk control 
 export const gym={name:'Dynamic Gym Upgraded',location:'Ghatikia / Kalinganagar, Bhubaneswar',url:'https://share.google/V9EaVnQTEKHRnEJdw',checked:'9 October 2026',note:'You confirmed that your gym is fully equipped. The plan uses standard machines, cables, dumbbells and benches. Ask staff for the exact seat, pad and safety-stop settings; alternatives help when a station is occupied.'};
 export const week=[
  {name:'Rest & reset',kind:'Recovery',ids:[]},
- {name:'Upper A',kind:'Strength',ids:['press','row','pulldown','raise']},
+ {name:'Upper A',kind:'Strength',ids:['press','row','pulldown','raise','biceps']},
  {name:'Lower A + core',kind:'Strength',ids:['legpress','curl','bridge','calf','deadbug']},
  {name:'Cardio & technique',kind:'Light day',ids:['walk']},
- {name:'Upper B',kind:'Strength',ids:['cablerow','press','pulldown','raise']},
+ {name:'Upper B',kind:'Strength',ids:['cablerow','press','pulldown','raise','triceps']},
  {name:'Lower B + core',kind:'Strength',ids:['squat','curl','bridge','calf','deadbug']},
  {name:'Rest or easy walk',kind:'Recovery',ids:[]}
 ];
@@ -184,3 +184,30 @@ for(const [id,exercise] of Object.entries(indianToolExamples)){
  tools[id].videoNote=media.videoNote||'';
  tools[id].photo={url:`https://i.ytimg.com/vi/${media.youtube}/hqdefault.jpg`,page:`https://www.youtube.com/watch?v=${media.youtube}`,author:media.videoLabel.split(' · ').at(-1),license:'Publisher preview · rights retained by original creator',kind:'video'};
 }
+
+// Arm exercises have matched video references; inspected Nano Banana teaching assets are assigned below.
+Object.assign(exercises,{
+ biceps:{name:'Single-arm dumbbell curl',muscles:'Biceps · front of upper arm',pattern:'pull',reps:'10–15 each side',equipment:'One light dumbbell',tools:['dumbbells'],alternatives:[],evidence:'Dumbbells confirmed available by you; choose a comfortable grip.',setup:'Stand tall with a light dumbbell by your side. Keep your elbow close to your ribs.',cues:['Keep your elbow beside your ribs.','Curl without swinging your body.','Lower slowly; repeat on the other arm.'],breathing:'Breathe out as you curl; breathe in as you lower.',mistake:'Do not lean back or bend your wrist to finish a rep.',stop:'Elbow or wrist pain, arm tingling, or loss of control.',progression:'Build controlled reps to 15 on both sides before trying the next small dumbbell increment.',alternative:'Ask staff for a comfortable curl variation; stop if symptoms occur.',rest:'60–90 seconds after both arms; longer if needed',tempo:'Smooth lift, slow return',rir:'Leave 2–3 controlled reps',img:'./img/equipment-photos/dumbbells.webp',imageKind:'equipment',youtube:'UchfTCDE9AE',videoLabel:'Single-arm dumbbell curl · Cult Fit',videoNote:'Do the shown single-arm variation. Complete the planned reps on each side.',video:'https://www.youtube.com/watch?v=UchfTCDE9AE'},
+ triceps:{name:'V-bar triceps pushdown',muscles:'Triceps · back of upper arm',pattern:'push',reps:'10–15',equipment:'High cable pulley with a V-bar',tools:['cable'],alternatives:[],evidence:'Your saved photo notes identify a high pulley with a V-bar; confirm the clip and pin with staff.',setup:'Face a high pulley. Secure the V-bar, choose a light load, and keep elbows beside your ribs.',cues:['Keep elbows close and still.','Push the handle down smoothly.','Return slowly without lifting your shoulders.'],breathing:'Breathe out pushing down; breathe in returning.',mistake:'Do not use your bodyweight to force the handle down.',stop:'Elbow or wrist pain, arm tingling, or loss of control.',progression:'Build every set to 15 controlled reps before considering the smallest stack increment.',alternative:'Ask staff for another high-pulley station with the same attachment.',rest:'60–90 seconds; longer if needed',tempo:'Smooth push, slow return',rir:'Leave 2–3 controlled reps',img:'./img/equipment-photos/cable.webp',imageKind:'equipment',externalVideo:'https://www.fittr.com/exercise-video/cable-pushdown-with-v-bar-123/',videoLabel:'V-bar cable pushdown · FITTR',videoNote:'Indian coaching reference for the V-bar variation. Opens the tutorial page with its video and steps.',video:'https://www.fittr.com/exercise-video/cable-pushdown-with-v-bar-123/'}
+});
+exercises.biceps.photo={url:'https://i.ytimg.com/vi/UchfTCDE9AE/hqdefault.jpg',page:exercises.biceps.video,author:'Cult Fit',license:'Publisher preview · rights retained by original creator',kind:'video'};
+// The cable station's row preview is not a triceps demonstration.
+exercises.triceps.photo=null;
+// The old infographic's 'assisted pull-up' photo is a captain's-chair/dip station.
+// No photo in that file establishes a counterweight-assisted pull-up machine.
+exercises.assisted.evidence='Counterweighted pull-up station: confirm the moving assistance platform with staff. A captain’s-chair/dip station is different.';
+exercises.row.setup='For your photographed chest-supported T-bar row, stand on the secure foot platforms and keep your chest on its angled pad. Ask staff to show its loading peg and starting resistance.';
+tools.row.setup=['For a standing T-bar model, use its foot platforms and chest pad; there may be no seat.','Ask staff to identify its loading peg and starting resistance.','Keep your chest supported throughout the pull.'];
+exercises.row.videoNote='Chest-supported row technique reference. Your saved gym photo shows a standing T-bar model; use its foot platforms and chest pad. The video and generated image may show a different model.';
+tools.row.videoNote=exercises.row.videoNote;
+// Originals and prompts: resources/coach-media/nano-banana-training-v38.json.
+exercises.biceps.img='./img/coach/biceps-steps.webp';
+exercises.triceps.img='./img/coach/triceps-steps.webp';
+delete exercises.biceps.imageKind;
+delete exercises.triceps.imageKind;
+exercises.row.img='./img/coach/row-standing-steps-v1.webp';
+tools.row.image=exercises.row.img;
+exercises.row.videoNote='Chest-supported row technique reference. The illustration shows the standing T-bar type in your saved gym photo, not a verified brand/model. The video may show another supported-row model; use your own foot platforms, chest pad and loading peg.';
+tools.row.videoNote=exercises.row.videoNote;
+
+for(const [id,e] of Object.entries(exercises))e.repLabel=id==='walk'?e.reps:e.reps.includes('each side')?e.reps.replace('each side','reps per side'):e.reps+' reps';

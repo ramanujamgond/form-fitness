@@ -6,13 +6,13 @@ const row=(type,data,id=crypto.randomUUID(),time='2026-10-12T10:00:00.000Z')=>({
 const session=data=>row('session',{coachVersion:23,warmupDone:true,...data},'session');
 const set=(id,time)=>row('set',{exercise:'press',reps:10,rir:3,form:'good',guided:true,restUntil:10000},id,time);
 const state=(rows,now=5000)=>coachState(rows,date,['press'],'Foundation',now);
-test('a fresh session starts at the first concrete warm-up, including legacy sessions',()=>{
+test('a fresh session shows one warm-up checklist and preserves saved warm-up completion',()=>{
  assert.deepEqual(state([]),{phase:'warmup',index:0});
- assert.deepEqual(state([row('session',{warmupDone:true})]),{phase:'warmup',index:0});
+ assert.deepEqual(state([row('session',{warmupDone:true})]),{phase:'set',id:'press'});
  assert.deepEqual(state([session({warmupDone:false,warmupIndex:2})]),{phase:'warmup',index:2});
 });
-test('the first set opens only after equipment setup is confirmed',()=>{
- assert.equal(state([session({})]).phase,'setup');
+test('the first exercise opens directly with teaching and logging together',()=>{
+ assert.equal(state([session({})]).phase,'set');
  assert.equal(state([session({readyExercises:['press']})]).phase,'set');
 });
 test('the final set stays on rest before unlocking cooldown and completion review',()=>{

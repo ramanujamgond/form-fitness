@@ -1,4 +1,5 @@
-import {validDate} from './scheduling.js?v=36';
+import {validDate} from './scheduling.js?v=38';
+import {stageHistory} from './training.js?v=38';
 const esc = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const goals = ['Not sure yet','Get fitter','Build strength','Lose fat','Build core strength'];
 export const experiences = ['New to the gym','Some experience','Regular training'];
@@ -12,6 +13,7 @@ export function preferencesFrom(records) {
  }
  profile.name=typeof p.name==='string'?p.name.slice(0,80):'';
  profile.stage=['Foundation','Building','Intermediate','Advanced'].includes(p.stage)?p.stage:'Foundation';
+ profile.stageHistory=stageHistory(p.stageHistory);profile.easyUntil=validDate(p.easyUntil)?p.easyUntil:null;
  profile.goal=goals.includes(p.goal)?p.goal:goals[0];profile.experience=experiences.includes(p.experience)?p.experience:experiences[0];
  profile.workoutDays=Number.isInteger(p.workoutDays)&&p.workoutDays>=1&&p.workoutDays<=7?p.workoutDays:5;
  profile.planHistory=Array.isArray(p.planHistory)?p.planHistory.filter(r=>r&&validDate(r.effectiveFrom)&&Number.isInteger(r.days)&&r.days>=1&&r.days<=7).slice(-365):[];
@@ -37,5 +39,5 @@ export function accountPanel({auth,cloudReady,emailReady,mode,message,resetToken
 function recoveryForm(){return '<form data-form="forgotpin"><label>Account email</label><input name="email" type="email" autocomplete="email" required><p><button class="btn">Send reset link</button></p></form><small>The link expires in 15 minutes. Setting a new PIN signs out other sessions. Wait 60 seconds before requesting another link.</small>';}
 function backToLogin(){return '<p><button class="btn secondary" data-action="authmode:signin">Back to sign in</button></p>';}
 export function onboarding() {
- return `<section class="card beginner-guide" id="onboarding"><div class="eyebrow">Start here · Beginner guide</div><h1>Your first step, explained.</h1><p>No training experience needed. We’ll guide you through a beginner plan, one action at a time.</p><ol class="journey"><li><h3>Learn the basics</h3><p>A rep is one movement. A set is a group of reps. Start light enough to finish with 2–3 more clean reps possible.</p></li><li><h3>Follow your workout</h3><p>Warm up, watch the demonstration, then record each set’s reps and weight. Rest before the next set. Ask gym staff to check unfamiliar equipment.</p></li><li><h3>Fuel and recover</h3><p>Your day includes meal suggestions and recovery. Times and portions are starting points you can adjust.</p></li><li><h3>Build confidence</h3><p>Your stage grows with recorded technique, effort and recovery. Missed days do not create extra workouts.</p></li></ol><p>If a movement causes pain or tingling, stop it and record why.</p><button class="btn" data-action="begin">I’m ready · Show my day →</button></section>`;
+ return `<section class="card beginner-guide" id="onboarding"><div class="eyebrow">Your morning gym companion</div><h1>One workout. One step at a time.</h1><p>Build strength and muscle definition with a repeatable routine.</p><ol class="journey"><li><strong>Warm up</strong> · one short checklist.</li><li><strong>Train</strong> · watch the demo, do your set, save it.</li><li><strong>Finish</strong> · cool down and see your progress.</li></ol><p>A rep is one movement. A set is a group of reps. Start light and leave 2–3 good reps in reserve.</p><small>Your plan can develop from beginner to advanced. Changes need your review; missed days never create catch-up workouts.</small><p><button class="btn" data-action="begin">Show my workout →</button></p></section>`;
 }

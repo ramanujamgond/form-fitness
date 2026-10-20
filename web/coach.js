@@ -1,4 +1,4 @@
-import {sessionFor,currentExercise} from './journey.js?v=36';
+import {sessionFor,currentExercise} from './journey.js?v=38';
 
 export const warmupVideo='https://www.youtube-nocookie.com/embed/j1wFGag9zMo';
 export const warmupVideoLabel='Full-body warm-up and stretching · Nirbhay Pandey';
@@ -18,12 +18,11 @@ export const cooldown=[
 export function coachState(rows,date,ids,stage,now=Date.now()) {
  const session=sessionFor(rows,date),active=rows.filter(r=>!r.deleted&&r.date===date);
  if(session.status==='complete')return {phase:'complete'};
- if(session.coachVersion!==23||!session.warmupDone)return {phase:'warmup',index:Math.min(warmups.length-1,session.warmupIndex||0)};
+ if(!session.warmupDone)return {phase:'warmup',index:Math.min(warmups.length-1,session.warmupIndex||0)};
  const id=currentExercise(ids,rows,date,stage);
  if(id&&active.some(r=>r.type==='set'&&r.data.exercise===id&&r.data.symptom))return {phase:'stop',id};
  const latest=active.filter(r=>r.type==='set'&&r.data.guided).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0];
  if(latest&&session.restAcknowledged!==latest.id&&!(session.skippedExercises||[]).some(s=>s.id===latest.data.exercise))return {phase:'rest',row:latest,remaining:Math.max(0,Math.ceil((latest.data.restUntil-now)/1000))};
  if(!id)return (session.cooldownIndex||0)<cooldown.length?{phase:'cooldown',index:session.cooldownIndex||0}:{phase:'review'};
- if(!(session.readyExercises||[]).includes(id))return {phase:'setup',id};
  return {phase:'set',id};
 }

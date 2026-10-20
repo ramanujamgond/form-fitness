@@ -1,12 +1,13 @@
-import {localMealOptions} from './local-food.js?v=36';
+import {localMealOptions} from './local-food.js?v=38';
+import {recommendedSets} from './training.js?v=38';
 // Journey state is derived from journal records so it survives reloads and sync.
 export const stages=['Foundation','Building','Intermediate','Advanced'];
 export function setGoal(id,stage='Foundation') {
- return id==='walk'?1:id==='deadbug'?2:id==='pushup'?3:stage==='Foundation'?2:3;
+ return recommendedSets(id,stage);
 }
 export function sessionSetGoal(id,stage,session={}) {
  const chosen=session.setTargets?.[id];
- return Number.isInteger(chosen)&&chosen>=1&&chosen<=3?chosen:setGoal(id,stage);
+ return Number.isInteger(chosen)&&chosen>=1&&chosen<=3?chosen:session.coachVersion===23?(id==='walk'?1:id==='deadbug'?2:id==='pushup'?3:stage==='Foundation'?2:3):setGoal(id,stage);
 }
 export function sessionFor(rows,date) {
  return rows.filter(r=>!r.deleted&&r.type==='session'&&r.date===date).sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt))[0]?.data||{};
