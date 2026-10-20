@@ -8,10 +8,10 @@ The user confirmed the gym has all standard gym equipment. Programming now assum
 
 | Day | Movements | Equipment / alternatives |
 |---|---|---|
-| Monday | Chest press, supported row, pulldown, lateral raise | Press machine; supported row / confirmed low cable row; pulldown / assisted pull-up; light dumbbells |
+| Monday | Chest press, supported row, pulldown, lateral raise, single-arm dumbbell curl | Press machine; supported row / confirmed low cable row; pulldown / assisted pull-up; light dumbbells |
 | Tuesday | Leg press, leg curl, bridge, calf raise, dead bug | Leg press / squat to stable bench; seated or prone curl; mat for bridge and core |
 | Wednesday | Easy walking or cycling, technique practice | Treadmill, cycle or safe walking route; conversational pace |
-| Thursday | Seated cable row, chest press, pulldown, lateral raise | Same equipment and movement alternatives as Monday |
+| Thursday | Seated cable row, chest press, pulldown, lateral raise, V-bar triceps pushdown | Same equipment and movement alternatives as Monday |
 | Friday | Squat to bench, leg curl, bridge, calf raise, dead bug | Stable bench / leg press; curl machine; floor and balance support; mat |
 
 Foundation: two working sets per strength movement, generally 8–12 repetitions (raise/curl/bridge 10–15, calf 12–15, dead bug 6–10 each side), 2–3 clean reps in reserve. Rest around 90–120 seconds, longer when needed. Warm up and learn exact safety stops and machine settings with staff. Do not infer comparable weights across different machines or movements.
@@ -53,4 +53,10 @@ All 14 demonstrations have checked metadata and image previews. See `resources/m
 
 ## Guided session entry
 
-Start today’s session opens the first concrete warm-up movement. Five individually explained movements lead to equipment setup and technique demonstration for the first working exercise. Each working set has its own screen and captures actual reps, load, effort, and technique. Saved sets lead to a rest screen; the next set or exercise opens only after rest and an explicit Continue action. Two cooldown movements precede the final saved-session summary. Warm-up and cooldown movement completions are self-reported. Session step state is retained across reloads and sync.
+Start today’s session starts the saved total clock and opens one warm-up checklist. Each exercise combines three short cues, the reference video, expandable detailed instruction, load/reps and set logging. Rest stays on the same exercise card before the next set or movement. One cooldown checklist leads directly to saving the session. Completion is self-reported; the app cannot infer that the movements were performed.
+
+Arm additions: single-arm dumbbell curls (10–15 per side) and V-bar cable triceps pushdowns (10–15). Inspected Nano Banana MCP start/end illustrations demonstrate both arm movements; a new standing T-bar row illustration replaces the seated-row reference. They are labelled as generated teaching references. Reference tutorials: [Cult Fit single-arm curl](https://www.youtube.com/watch?v=UchfTCDE9AE), [FITTR V-bar pushdown](https://www.fittr.com/exercise-video/cable-pushdown-with-v-bar-123/).
+
+The original reference HTML contains a wrong assisted-pull-up identification: its photograph shows a captain’s-chair/dip station. Confirm a counterweighted platform with gym staff before using the assisted-pull-up alternative. The photographed chest-supported T-bar row is a standing model; generic images and videos may depict a different supported-row model. Exact press model remains uncertain. These distinctions appear in equipment guidance and `resources/equipment-reference-review.json`.
+
+Beginner training starts with two working sets. Building adds a third set to main lifts; Intermediate uses three sets for strength work except core, with trend/plateau review. Advanced keeps adjustable 1–3-set plans and requires a trainer review acknowledgement. These are starting templates, not automatic advanced periodization. All stage changes require recorded readiness and user confirmation. Easy return sessions stay at two working sets and do not count toward advancement. Loads compare only on the same equipment and setting.

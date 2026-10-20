@@ -9,6 +9,8 @@ exercises = json.loads(subprocess.check_output(['node', '--input-type=module', '
 
 def check(item):
     key, exercise = item
+    if exercise.get('externalVideo'):
+        return {'exercise': key, 'video': exercise['externalVideo'], 'check': 'External tutorial page; verify its player and variation separately.'}
     url = f'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={exercise["youtube"]}&format=json'
     result = {'exercise': key, 'video': f'https://www.youtube.com/watch?v={exercise["youtube"]}'}
     try:

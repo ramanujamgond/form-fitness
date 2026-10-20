@@ -4,9 +4,9 @@ import {readFileSync} from 'node:fs';
 import {exercises,tools} from '../web/content.js';
 import {warmupVideo,cooldown} from '../web/coach.js';
 test('all active exercise and equipment videos use the selected Indian fitness channels',()=>{
- const channels=['Himalayan Stallion Academy','Jeet Selal Aesthetics','Yatinder Singh','Cult Fit','cultstore','Nirbhay Pandey','Jerai Fitness'];
+ const channels=['Himalayan Stallion Academy','Jeet Selal Aesthetics','Yatinder Singh','Cult Fit','cultstore','Nirbhay Pandey','Jerai Fitness','FITTR'];
  for(const item of [...Object.values(exercises),...Object.values(tools)]){
-  assert.match(item.youtube,/^[A-Za-z0-9_-]{11}$/);
+  if(item.externalVideo)assert.match(item.externalVideo,/^https:\/\/www\.fittr\.com\/exercise-video\//);else assert.match(item.youtube,/^[A-Za-z0-9_-]{11}$/);
   assert.ok(channels.some(c=>item.videoLabel.endsWith(' · '+c)),item.videoLabel);
  }
  assert.match(warmupVideo,/youtube-nocookie.com\/embed\/j1wFGag9zMo/);
@@ -30,11 +30,11 @@ test('seated curl and assisted-machine illustrations have matching machine refer
  assert.match(exercises.squat.videoNote,/without a bench/);
 });
 
-test('all strength movements use offline raster start/end photos',()=>{
+test('all movements have offline raster references with equipment images labelled honestly',()=>{
  for(const [id,e] of Object.entries(exercises)){
   if(id==='walk')continue;
-  assert.equal(e.img,`./img/coach/${id}-steps.webp`);
-  const bytes=readFileSync(new URL(`../web/img/coach/${id}-steps.webp`,import.meta.url));
+  if(!e.imageKind)assert.equal(e.img,id==='row'?'./img/coach/row-standing-steps-v1.webp':`./img/coach/${id}-steps.webp`);else assert.equal(e.imageKind,'equipment');
+  const bytes=readFileSync(new URL('../web/'+e.img.replace('./',''),import.meta.url));
   assert.equal(bytes.toString('ascii',8,12),'WEBP');
  }
 });

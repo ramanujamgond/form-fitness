@@ -1,0 +1,42 @@
+{
+  "checked": "2026-10-20",
+  "method": "Visual inspection of the embedded original gym photographs; not an on-site inventory.",
+  "references": [
+    {
+      "source": "docs/gym_infographic_reference.html, embedded photo 0",
+      "movement": "Lat pulldown / high-pulley station",
+      "status": "High pulley, seat and pulldown bar visible; ask staff to confirm pads and exact setup."
+    },
+    {
+      "source": "docs/gym_infographic_reference.html, embedded photo 1",
+      "movement": "Chest-supported T-bar row",
+      "status": "Standing foot platforms, angled chest pad and plate-loading peg visible. Do not apply a generic seated-row seat-adjustment instruction."
+    },
+    {
+      "source": "docs/gym_infographic_reference.html, embedded photo 2",
+      "movement": "Plate-loaded press",
+      "status": "Exact press model and angle remain uncertain; generic chest press tutorials are not proof of exact setup."
+    },
+    {
+      "source": "docs/gym_infographic_reference.html, embedded photo 3",
+      "movement": "Captain’s-chair / dip station",
+      "status": "Originally labelled assisted pull-up. No moving counterweight assistance platform is shown. Do not use this photo as confirmation of an assisted pull-up machine."
+    }
+  ],
+  "newTutorials": [
+    {
+      "exercise": "Single-arm dumbbell curl",
+      "source": "https://www.youtube.com/watch?v=UchfTCDE9AE",
+      "creator": "Cult Fit / wearecult",
+      "checked": "Primary YouTube search metadata identifies the single-arm beginner demonstration; playback not guaranteed."
+    },
+    {
+      "exercise": "V-bar cable triceps pushdown",
+      "source": "https://www.fittr.com/exercise-video/cable-pushdown-with-v-bar-123/",
+      "creator": "FITTR",
+      "checked": "Primary tutorial page matches the V-bar variation. Opens the tutorial page rather than an invented YouTube ID."
+    }
+  ],
+  "guidanceSource": "https://acsm.org/resistance-training-guidelines-update-2026/",
+  "privacy": "Original private gym photos are not copied to web/."
+}
