@@ -1,4 +1,4 @@
-import {indianVideos,indianBikeVideo} from './indian-videos.js?v=40';
+import {indianVideos,indianBikeVideo} from './indian-videos.js?v=41';
 export const exercises = {
  assisted:{name:'Assisted pull-up',muscles:'Lats · biceps · upper back',pattern:'pull',reps:'6–10',setup:'Have staff demonstrate the assistance platform and safe entry/exit. More assistance makes the movement easier.',cues:['Choose enough assistance for controlled reps.','Pull without swinging or shrugging.','Lower smoothly; stop with pain or tingling.'],mistake:'Do not treat assistance as ordinary added weight. Less assistance is a progression, only when controlled and symptom-free.',alternative:'Comfortable lat pulldown, after equipment setup.',video:null},
  press:{name:'Machine chest press',muscles:'Chest · triceps · front shoulders',pattern:'push',reps:'8–12',setup:'Adjust the seat so handles meet mid-chest. Keep feet planted and back supported.',cues:['Keep wrists aligned with forearms.','Press smoothly without shrugging.','Return through a comfortable range.'],mistake:'Do not bounce, force a deep stretch, or continue with wrist pain or tingling.',alternative:'A comfortable neutral-grip press, only if symptom-free.',video:null},
@@ -52,16 +52,16 @@ export const tools={
 };
 export const basics=[
  {id:'rep',term:'Rep (repetition)',short:'One complete movement: down and back up.',detail:'One rep is one full cycle of an exercise, for example lowering into a squat and standing up again. Count only reps done with control.'},
- {id:'set',term:'Set',short:'A group of reps done in a row, then a rest.',detail:'“2 × 10” means 2 sets of 10 reps: do 10 reps, rest, then do 10 more. Foundation sessions use 2 working sets per exercise.'},
- {id:'rest',term:'Rest interval',short:'The pause between sets.',detail:'Rest about 90–120 seconds between strength sets so you can repeat good technique. Use the rest timer on the Train screen.'},
- {id:'rir',term:'Reps in reserve (RIR)',short:'How many more clean reps you could still do.',detail:'If you stop a set and could have done 2 more good reps, that set was RIR 2. Foundation sets finish with 2–3 reps in reserve.'},
- {id:'rpe',term:'Effort (RPE)',short:'A 1–10 effort score; 10 is maximal.',detail:'In resistance training, RPE 10 means no more reps were possible. RPE is roughly 10 minus RIR, so RIR 2 ≈ RPE 8.'},
+ {id:'set',term:'Set',short:'A group of reps done in a row, then a rest.',detail:'“2 × 10” means 2 sets of 10 reps: do 10 reps, rest, then do 10 more. Beginner sessions use 2 working sets per exercise.'},
+ {id:'rest',term:'Rest between sets',short:'The pause between sets.',detail:'Rest about 90–120 seconds between strength sets so you can repeat good technique. Use the rest timer on the Train screen.'},
+ {id:'rir',term:'Reps left (RIR)',short:'How many more clean reps you could still do.',detail:'If you stop a set and could have done 2 more good reps, that set was RIR 2. As a beginner, stop while you could still do 2–3 good reps.'},
+ {id:'rpe',term:'Effort score (RPE)',short:'A 1–10 effort score; 10 is maximal.',detail:'In resistance training, RPE 10 means no more reps were possible. RPE is roughly 10 minus RIR, so RIR 2 ≈ RPE 8.'},
  {id:'range',term:'Rep range',short:'The target span of reps, such as 8–12.',detail:'Choose a load that lets you reach the range with good form. When every set reaches the top of the range, it is time to consider a small increase.'},
- {id:'load',term:'Load / weight',short:'The resistance you move, in kg.',detail:'Loads only compare on the same machine and setting. On the assisted pull-up, the number is help, so a lower number is harder.'},
- {id:'volume',term:'Volume',short:'Total work: sets × reps × load.',detail:'2 sets of 10 reps at 20 kg = 400 kg of volume. The app also counts working sets per muscle group each week.'},
+ {id:'load',term:'Weight / resistance',short:'The resistance you move, in kg.',detail:'Loads only compare on the same machine and setting. On the assisted pull-up, the number is help, so a lower number is harder.'},
+ {id:'volume',term:'Total work (volume)',short:'Total work: sets × reps × load.',detail:'2 sets of 10 reps at 20 kg = 400 kg of volume. The app also counts working sets per muscle group each week.'},
  {id:'warmup',term:'Warm-up vs working set',short:'Light preparation sets come before the sets that count.',detail:'Warm-up sets use a light load to rehearse the movement. Working sets are the prescribed sets you log and progress.'},
- {id:'tempo',term:'Tempo',short:'The speed of each phase of a rep.',detail:'A simple guide: lower in about 2 seconds, no pause, lift in about 1 second. Control matters more than the exact count.'},
- {id:'overload',term:'Progressive overload',short:'Small, gradual increases over time.',detail:'Add a rep, then a set or a small load step only when form is stable and you are symptom-free. Progress is measured over weeks, not single sessions.'},
+ {id:'tempo',term:'Movement speed (tempo)',short:'The speed of each phase of a rep.',detail:'A simple guide: lower in about 2 seconds, no pause, lift in about 1 second. Control matters more than the exact count.'},
+ {id:'overload',term:'Build up slowly',short:'Small, gradual increases over time.',detail:'Add a rep, then a set or a small load step only when form is stable and you are symptom-free. Progress is measured over weeks, not single sessions.'},
  {id:'form',term:'Form / technique',short:'The safe, controlled way to do the movement.',detail:'Good form means a steady body position, a comfortable range and no pain. If form breaks down, end the set.'},
  {id:'superset',term:'Superset',short:'Two exercises done back to back, then rest.',detail:'Supersets save time but add fatigue. The foundation plan does not use them; it is listed so you recognise the term.'}
 ];
