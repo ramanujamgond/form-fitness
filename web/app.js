@@ -229,5 +229,5 @@ async function sync(manual){
  finally{busy=false;const status=$('.status');if(status)status.textContent=syncStatus();restoreWorkout();const cloudStatus=$('#cloud-status');if(cloudStatus)cloudStatus.textContent=syncStatus();}
 }
 addEventListener('storage',event=>{if(['form-local-scope','form-last-account'].includes(event.key))location.reload();});
-addEventListener('online',()=>{cloudReachable=null;render();if(auth)sync(false);else connectCloud();});addEventListener('offline',()=>{cloudReachable=false;render();});document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync(false);});setInterval(()=>{if(!document.hidden&&records.some(r=>r.dirty))sync(false);},180000);
+addEventListener('online',()=>{cloudReachable=null;render();connectCloud();});addEventListener('offline',()=>{cloudReachable=false;render();});document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync(false);});setInterval(()=>{if(!document.hidden&&records.some(r=>r.dirty))sync(false);},180000);
 try{await openDB(scope);records=await allRecords();applyPreferences();render();if('serviceWorker'in navigator)registerAppWorker();connectCloud();}catch(err){$('#app').textContent='Local storage could not open. Enable site storage and reload; do not clear existing data without a backup.';console.error(err);}
