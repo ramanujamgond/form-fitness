@@ -1,4 +1,4 @@
-import {sessionFor,currentExercise} from './journey.js?v=40';
+import {sessionFor,currentExercise} from './journey.js?v=41';
 
 export const warmupVideo='https://www.youtube-nocookie.com/embed/j1wFGag9zMo';
 export const warmupVideoLabel='Full-body warm-up and stretching · Nirbhay Pandey';

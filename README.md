@@ -32,7 +32,10 @@ Open the public HTTPS URL directly in Chrome on Android or Safari on iPhone, rat
 ## What is included
 
 - Today dashboard and recovery check-in
-- Calendar with selectable past dates and next-week ICS export
+- Calendar previews for past and future days: exercises, sets/reps, equipment and read-only tutorial dialogs
+- Learn by workout day, using your actual schedule, training stage, breaks and saved workout changes
+- Short labels and expandable explanations, with full exercise and equipment guides available
+- Next-week ICS export
 - Workout sets, effort/form/symptom notes, cardio and optional exercises
 - Rest timer with best-effort active-screen vibration/sound
 - 14 compressed Nano Banana exercise illustrations, credited original demonstration previews and exercise instructions

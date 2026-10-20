@@ -1,6 +1,6 @@
-import {validDate,validBreak} from './dates.js?v=40';
-export {validDate,validBreak} from './dates.js?v=40';
-import {week} from './content.js?v=40';
+import {validDate,validBreak} from './dates.js?v=41';
+export {validDate,validBreak} from './dates.js?v=41';
+import {week} from './content.js?v=41';
 const rest=()=>({...week[0],ids:[]});
 const fullA={name:'Full body A + core',kind:'Strength',ids:['press','row','legpress','bridge','deadbug']};
 const fullB={name:'Full body B + core',kind:'Strength',ids:['press','pulldown','squat','curl','deadbug']};
@@ -22,4 +22,4 @@ export function dayPlan(profile,records,date){
  return !completed&&(pause||skip)?{...base,name:'Break · '+base.name,ids:[],skipped:true,reason:pause?.data.reason||skip?.data.reason||'Taking a break'}:base;
 }
 export function planSummary(days){const plans=weeklyPlan(days),strength=plans.filter(p=>p.kind==='Strength').length,light=plans.filter(p=>p.kind==='Light day').length;return `${strength} strength ${strength===1?'day':'days'}, ${light} light ${light===1?'day':'days'}, ${7-Number(days)} rest ${7-Number(days)===1?'day':'days'}.` ;}
-export function frequencyField(profile){return `<label>Activity days per week</label><select name="workoutDays">${Array.from({length:7},(_,i)=>i+1).map(n=>`<option value="${n}" ${profile.workoutDays===n?'selected':''}>${n} ${n===1?'day':'days'}${n===5?' (current default)':''}</option>`).join('')}</select><small data-frequency-summary>${planSummary(profile.workoutDays)} Six and seven days include easy activity. Recovery stays part of the plan; missed sessions are not added later.</small>`;}
+export function frequencyField(profile){return `<label>Activity days per week</label><select name="workoutDays">${Array.from({length:7},(_,i)=>i+1).map(n=>`<option value="${n}" ${profile.workoutDays===n?'selected':''}>${n} ${n===1?'day':'days'}${n===5?' (recommended start)':''}</option>`).join('')}</select><small data-frequency-summary>${planSummary(profile.workoutDays)} A 6- or 7-day week includes easy activity. Keep rest days. Don’t add extra workouts for missed days.</small>`;}

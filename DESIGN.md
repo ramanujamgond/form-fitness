@@ -53,3 +53,9 @@ The app identity is an abstract flowing loop formed by two broad curved ribbons,
 The manifest supplies ordinary 192/512 px icons and a dedicated full-bleed 512 px maskable icon. The symbol remains within Android’s central safe circle, allowing Samsung launchers to apply their own icon shape. Safari uses a 180 px Apple touch icon; browser tabs use 32 px PNG and multi-size ICO exports. All deployed brand assets are local and cached offline. The full-resolution master and provenance stay outside the deployable directory.
 
 The name Stride reflects steady progress through training, recovery and daily habits. The abstract loop remains the visual identity; the app name appears as STRIDE in the header and Stride in browser and installation metadata.
+
+## Planning and learning
+
+The calendar puts the selected day’s exercises before summaries and schedule-editing controls. Exercise rows show a name, dose and equipment links. Tutorial dialogs never start or save a workout. Learn → Workout days uses the same date-specific plan, including overrides, breaks and saved session settings. Keep schedule controls in expandable sections, and put account/logout controls near the top of More.
+
+Use short sentences, familiar verbs and one clear next action. Explain gym terms in plain language; keep detailed technique, safety notes, sources and videos available behind named disclosures. Preserve the meaning of safety guidance when shortening wording.

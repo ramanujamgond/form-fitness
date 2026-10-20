@@ -45,8 +45,9 @@ const origin=process.env.FORM_TEST_URL||'http://localhost:3000';
  // Reload from the installed worker offline and verify durable records and every guide image.
  await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await page.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await page.reload();await page.waitForSelector('.session-history');
  await page.goto(origin+'/#train?date=2026-10-12');await page.waitForSelector('[data-coach-phase="complete"]');await page.getByText('Review saved sets and skips',{exact:true}).click();await page.locator('[data-action^="undoexercise:"]').first().click();await page.waitForSelector('[data-coach-phase="stop"]');
- const records=await page.evaluate(async()=>{const store=await import('./store.js?v=38');return store.allRecords();});const session=records.find(r=>r.type==='session');assert.equal(session.data.status,'in_progress');assert.equal(session.data.setTargets.press,1);assert.ok(session.data.exerciseIds.includes('cablerow'));assert.ok(session.data.endedAt);
+ const records=await page.evaluate(async()=>{const store=await import('./store.js?v=41');return store.allRecords();});const session=records.find(r=>r.type==='session');assert.equal(session.data.status,'in_progress');assert.equal(session.data.setTargets.press,1);assert.ok(session.data.exerciseIds.includes('cablerow'));assert.ok(session.data.endedAt);
  await page.goto(origin+'/#learn?section=exercises');await page.waitForSelector('.exercise');assert.equal(await page.locator('.exercise').count(),16);
+ for(const detail of await page.locator('.exercise>details').all())await detail.evaluate(d=>d.open=true);
  for(const img of await page.locator('.ex-hero').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());}assert.equal(await page.locator('a[href="https://www.fittr.com/exercise-video/cable-pushdown-with-v-bar-123/"]').count()>0,true);
  await page.setViewportSize({width:320,height:740});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
  assert.deepEqual(errors,[]);await context.close();
