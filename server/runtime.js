@@ -3,6 +3,7 @@ import { betterAuth } from 'better-auth';
 import { waitUntil, attachDatabasePool } from '@vercel/functions';
 import { emailConfigured, sendAccountEmail } from './email.js';
 import { pinHooks, clearPinAttempts } from './pin.js';
+import { googleAuthOptions } from './google.js';
 
 let runtime;
 export const isProduction = () => process.env.VERCEL === '1' || process.env.NODE_ENV === 'production';
@@ -20,6 +21,7 @@ export function getRuntime({ validateSchema = true, databaseURL = process.env.DA
   pool.on('error', () => console.error('Database connection interrupted'));
   if (process.env.VERCEL === '1') attachDatabasePool(pool);
   const auth = betterAuth({
+    ...googleAuthOptions(),
     database: pool,
     secret: process.env.BETTER_AUTH_SECRET,
     baseURL: origin,
