@@ -1,7 +1,7 @@
-import {weightText} from './prescription.js?v=39';
-import {warmups,cooldown,warmupSource,warmupVideoLabel} from './coach.js?v=39';
-import {exercises,tools} from './content.js?v=39';
-import {stageInfo} from './training.js?v=39';
+import {weightText} from './prescription.js?v=40';
+import {warmups,cooldown,warmupSource,warmupVideoLabel} from './coach.js?v=40';
+import {exercises,tools} from './content.js?v=40';
+import {stageInfo} from './training.js?v=40';
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const steps=items=>`<ol class="coach-instructions">${items.map(s=>`<li>${esc(s)}</li>`).join('')}</ol>`;
 const options=(items,current,label=x=>x)=>items.map(x=>`<option value="${esc(x)}" ${String(x)===String(current)?'selected':''}>${esc(label(x))}</option>`).join('');
